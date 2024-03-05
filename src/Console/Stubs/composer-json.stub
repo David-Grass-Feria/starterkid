@@ -1,0 +1,40 @@
+{
+    "name": "{{ vendorKebab }}/{{ pluginKebab }}",
+    "description": "Tester for starterkid",
+    "homepage":"https://google.com",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "David Grass Feria",
+        "email": "kontakt@david-grass-feria.de"
+      }
+    ],
+   
+    "autoload": {
+      
+      "psr-4": {
+        "{{ vendor }}\\{{ plugin }}\\": "src",
+        "{{ vendor }}\\{{ plugin }}\\Database\\Factories\\": "database/factories/",
+        "{{ vendor }}\\{{ plugin }}\\Database\\Migrations\\": "database/migrations/",
+        "{{ vendor }}\\{{ plugin }}\\Database\\Seeders\\": "database/seeders/"
+      }
+    },
+    
+    "extra": {
+      "thumb-name":"{{ thumbPlugin }}",
+      "thumb-vendor":"{{ thumbVendor }}",
+      "logo-url":"https://ischtvan.de/wp-content/uploads/2023/03/All-Inkl-Logo.jpg",
+      "laravel": {
+        "providers": [
+          "{{ vendor }}\\{{ plugin }}\\Providers\\AppServiceProvider"
+        ]
+        
+      }
+     
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+      "grass-feria/starterkid": "dev-main"
+  }
+  }

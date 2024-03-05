@@ -1,0 +1,13 @@
+{
+    
+    "Create {{ singularStrtolower }}":                                                           "Beitrag erstellen",
+    "{{ singularUcfirst }} created":                                                             "Beitrag erstellt",
+    "{{ singularUcfirst }} updated":                                                             "Beitrag aktualisiert"
+    
+    
+
+
+
+
+
+}

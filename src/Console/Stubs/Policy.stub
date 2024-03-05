@@ -1,0 +1,18 @@
+<?php
+
+namespace {{ vendor }}\{{ plugin }}\Policies;
+
+use App\Models\User;
+use \{{ vendor }}\{{ plugin }}\Models\{{ singularUcfirst }};
+use Illuminate\Auth\Access\Response;
+use GrassFeria\Starterkid\Traits\TeamManagmentPolicyTrait;
+
+class {{ singularUcfirst }}Policy
+{
+   
+     use TeamManagmentPolicyTrait;
+
+   
+
+    
+}

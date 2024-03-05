@@ -1,0 +1,55 @@
+<?php
+
+namespace {{ vendor }}\{{ plugin }}\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+
+class {{ singularUcfirst }} extends Model implements HasMedia
+{
+    use HasFactory;
+    use InteractsWithMedia;
+
+    protected $fillable = [
+       'team_id',
+    ];
+
+    //protected $casts = [
+    //    'date' => 'date',
+    //    'date_time' => 'datetime',
+    //    'time' => 'datetime',
+    //    'active' => 'boolean',
+    //    
+    //];
+
+    public function scopeOfTeam($query, $teamId)
+    {
+        return $query->where('team_id', $teamId);
+    }
+
+    //public function getDate()
+    //{
+    //    return $this->date->format(config('starterkid.time_format.date_format'));
+    //}
+
+    //public function getDateTime()
+    //{
+    //    return $this->date_time->format(config('starterkid.time_format.date_time_format'));
+    //}
+
+    //public function getTime()
+    //{
+    //    return $this->time->format(config('starterkid.time_format.time_format'));
+    //}
+
+    //protected function name(): Attribute
+    //{
+    //    return Attribute::make(
+    //        get: fn (string $value) => ucfirst($value),
+    //        set: fn (string $value) => ucfirst($value),
+    //    );
+    //}
+}

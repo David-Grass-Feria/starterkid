@@ -1,0 +1,81 @@
+<?php
+
+namespace {{ vendor }}\{{ plugin }}\Providers;
+
+use Livewire\Livewire;
+use Illuminate\Support\ServiceProvider;
+use {{ vendor }}\{{ plugin }}\Console\Commands\Install{{ plugin }}Command;
+
+
+class AppServiceProvider extends ServiceProvider
+{
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->app->register(RouteServiceProvider::class);
+        $this->app->register(AuthServiceProvider::class);
+        //$this->mergeConfigFrom(
+        //    __DIR__.'/../../config/{{ singularStrtolower }}.php', '{{ plugin }}'
+        //);
+        
+    }
+
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        $this->loadViewsFrom(__DIR__.'/../../resources/views', '{{ pluginStrToLower }}');
+        $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
+        $this->loadJsonTranslationsFrom(__DIR__.'/../../lang');
+        Livewire::component(\{{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }}\{{ singularUcfirst }}Create::class);
+        Livewire::component(\{{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }}\{{ singularUcfirst }}Edit::class);
+        Livewire::component(\{{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }}\{{ singularUcfirst }}Index::class);
+
+        $this->publishes([
+            __DIR__.'/../../config/navlink.php' => base_path('/config/starterkid/{{ vendorKebab }}/{{ pluginKebab }}/navlink.php'),
+        ], '{{ plugin }} config');
+
+
+        // commands
+        $this->commands([
+            Install{{ plugin }}Command::class,
+            
+        ]);
+
+        // scheduler
+        //$this->app->booted(function () {
+        //    $schedule = $this->app->make(Schedule::class);
+        //    $schedule->command('backup:run')->everyFiveMinutes();
+        //    
+        //});
+
+        // middleware you must load (Kernel $kernel) in boot
+        //$kernel->prependMiddlewareToGroup('web', \{{ vendor }}\{{ plugin }}\Http\Middleware\CheckIfAppIsLocal::class);
+
+        
+        // create private disk
+        //$this->app->config->set('filesystems.disks.photo', [
+        //    'driver'   => env('PHOTO_DISK','local'), //local or sftp
+        //    'root'     => 'photos',
+        //    'host'     => env('STORAGEBOX_HOST',''),
+        //    'username' => env('STORAGEBOX_USERNAME',''),
+        //    'password' => env('STORAGEBOX_PASSWORD',''),
+        //    'visibility' => 'private',
+        //    'directory_visibility' => 'private',
+        //    'maxTries' => 4,
+        //    'port' => 22,
+        //    'timeout' => 30,
+        //    'useAgent' => false,
+        //]);
+
+
+       
+    }
+}

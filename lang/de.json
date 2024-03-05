@@ -1,0 +1,37 @@
+{
+    "Back":                                                                                             "Zurück",
+    "Cancel":                                                                                           "Abbrechen",
+    "Save":                                                                                             "Speichern",
+    "Search":                                                                                           "Suchen",
+    "Update your account's profile information and email address.":                                     "Aktualisiere deine Profil Information und Email Adresse",
+    "Update Password":                                                                                  "Passwort aktualisieren",
+    "Ensure your account is using a long, random password to stay secure.":                             "Benutze ein starkes und langes zufälliges Passwort",
+    "Current Password":                                                                                 "Aktuelles Passwort",
+    "New Password":                                                                                     "Neues Passwort",
+    "Passwort bestätigen":                                                                              "Passwort bestätigen",
+    "Two Factor Authentication":                                                                        "2 faktor authentifizierung",
+    "Add additional security to your account using two factor authentication.":                         "Sichere dein Account mit 2 faktor authentifizierung",
+    "You have not enabled two factor authentication.":                                                  "Du hast 2 faktor authentifizierung nicht aktiviert",
+    "When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone's Google Authenticator application.":"Wenn die Zwei-Faktor-Authentifizierung aktiviert ist, werden Sie während der Authentifizierung zur Eingabe eines sicheren, zufälligen Tokens aufgefordert. Sie können dieses Token über die Google Authenticator-Anwendung Ihres Telefons abrufen.",
+    "Manage and log out your active sessions on other browsers and devices.":                           "Verwalten Sie Ihre aktiven Sitzungen auf anderen Browsern und Geräten und melden Sie sich ab.",
+    "If necessary, you may log out of all of your other browser sessions across all of your devices. Some of your recent sessions are listed below; however, this list may not be exhaustive. If you feel your account has been compromised, you should also update your password.":"Falls erforderlich, können Sie sich von allen anderen Browser-Sitzungen auf allen Ihren Geräten abmelden. Einige Ihrer letzten Sitzungen sind unten aufgeführt; diese Liste ist jedoch möglicherweise nicht vollständig. Wenn Sie glauben, dass Ihr Konto kompromittiert wurde, sollten Sie auch Ihr Passwort aktualisieren.",
+    "Delete Account":                                                                                   "Account löschen",
+    "Permanently delete your account.":                                                                 "Löschen Sie Ihr Konto endgültig.",
+    "Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.":"Nach der Löschung Ihres Kontos werden alle Ressourcen und Daten dauerhaft gelöscht. Bevor Sie Ihr Konto löschen, laden Sie bitte alle Daten oder Informationen herunter, die Sie aufbewahren möchten.",
+    "Enable":                                                                                           "Aktivieren",
+    "The team's name and owner information.":                                                           "Name des Teams und Angaben zum Eigentümer.",
+    "Add Team Member":                                                                                  "Team Mitglied hinzufügen",
+    "Add a new team member to your team, allowing them to collaborate with you.":                       "Fügen Sie ein neues Team Mitglied zu Ihrem Team hinzu, damit es mit Ihnen zusammenarbeiten kann.",
+    "Please provide the email address of the person you would like to add to this team.":               "Bitte geben Sie die E-Mail-Adresse der Person an, die Sie zu diesem Team hinzufügen möchten.",
+    "Role":                                                                                             "Rolle",
+    "Create a new team to collaborate with others on projects.":                                        "Erstellen Sie ein neues Team, um mit anderen an Projekten zusammenzuarbeiten.",
+    "Delete":                                                                                           "Löschen",
+    "Reset":                                                                                            "Zurücksetzen",
+    "Edit":                                                                                             "Bearbeiten",   
+    "Are you sure?":                                                                                    "Bist du sicher?"
+
+
+
+
+
+}

@@ -1,0 +1,61 @@
+<?php
+
+namespace {{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }};
+
+
+use Livewire\Component;
+use GrassFeria\Starterkid\Traits\LivewireIndexTrait;
+
+
+class {{ singularUcfirst }}Index extends Component
+{
+
+    use LivewireIndexTrait;
+
+
+    public function mount()
+    {
+        $this->authorize('viewAny',\{{ vendor }}\{{ plugin }}\Models\{{ singularUcfirst }}::class);
+    }
+
+    public function destroyRecords()
+    {
+        
+        foreach ($this->selected as $recordId) {
+            $findRecord = \{{ vendor }}\{{ plugin }}\Models\{{ singularUcfirst }}::find($recordId);
+            $this->authorize('delete',[\{{ vendor }}\{{ plugin }}\Models\{{ singularUcfirst }}::class,$findRecord]);
+            //\GrassFeria\Starterkid\Jobs\SpatieMediaLibary\DeleteMediaCollection::dispatch($findRecord,'photos');
+            $findRecord->delete();
+
+        }
+
+        $this->selected = [];
+
+
+    }
+
+
+    public function render()
+    {
+
+        try {
+
+        ${{ pluralStrtolower }} = \{{ vendor }}\{{ plugin }}\Models\{{ singularUcfirst }}::query()
+        ->with('media')
+        ->select('id','team_id')
+        ->ofTeam(auth()->user()->currentTeam->id)
+        //->where(function($query) {
+        //$query->where('id', 'REGEXP', $this->search)
+            //->orWhere('title', 'REGEXP', $this->search)
+            //->orWhere('body', 'REGEXP', $this->search);
+        //})
+        ->orderBy($this->orderBy, $this->sort)
+        ->paginate($this->perPage);
+
+        return view('{{ pluginStrToLower }}::livewire.{{ singularStrtolowerKebab }}.{{ singularStrtolowerKebab }}-index',['{{ pluralStrtolower }}' => ${{ pluralStrtolower }}]);
+
+        } catch (\Illuminate\Database\QueryException) {
+            abort(403, __('Your plugin needs a database update.'));
+        }
+    }
+}

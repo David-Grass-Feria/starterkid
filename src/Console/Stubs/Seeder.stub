@@ -1,0 +1,20 @@
+<?php
+
+namespace {{ vendor }}\{{ plugin }}\Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+
+class {{ singularUcfirst }}Seeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        \{{ vendor }}\{{ plugin }}\Models\{{ singularUcfirst }}::create([
+            'id'                                        => 1,
+            
+        ]);
+    }
+}

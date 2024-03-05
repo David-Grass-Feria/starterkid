@@ -1,0 +1,30 @@
+{
+    "name": "grass-feria/starterkid",
+    "description": "Starterkid for laravel",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "David Grass Feria",
+        "email": "kontakt@david-grass-feria.de"
+      }
+    ],
+   
+    "autoload": {
+      
+      "psr-4": {
+        "GrassFeria\\Starterkid\\": "src"
+      }
+    },
+    
+    "extra": {
+      "laravel": {
+        "providers": [
+          "GrassFeria\\Starterkid\\Providers\\AppServiceProvider"
+        ]
+        
+      }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+  }
+  

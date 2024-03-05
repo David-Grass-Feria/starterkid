@@ -1,0 +1,4 @@
+'image/jpg','image/png','image/jpeg','image/JPEG','image/JPG','image/PNG','image/svg','image/SVG','image/webp','image/svg'  
+'audio/mpeg','audio/wav'
+'video/mp4','video/mpeg'
+'text/csv','text/txt','application/abw','application/arc','application/azw','application/bin','application/bz','application/bz2','application/cda','application/csh','application/doc','application/docx','application/eot','application/epup','application/gz','application/jar','application/json','application/jsonld','application/mpkg','application/odp','application/ods','application/odt','application/ogx','application/pdf','application/php','application/ppt','application/pptx','application/rar','application/rtf','application/sh','application/tar','application/vsd','application/xhtml','application/xls','application/xlsx','application/xml','application/xul','application/zip','application/7z','application/octet-stream'

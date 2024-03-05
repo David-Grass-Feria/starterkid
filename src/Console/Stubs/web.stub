@@ -1,0 +1,39 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use \{{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }}\{{ singularUcfirst }}Create;
+use \{{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }}\{{ singularUcfirst }}Edit;
+use \{{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }}\{{ singularUcfirst }}Index;
+
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+   
+    Route::get('/dashboard/{{ pluralStrtolower }}',{{ singularUcfirst }}Index::class)->name('{{ pluralStrtolower }}.index');
+    Route::get('/dashboard/{{ pluralStrtolower }}/create',{{ singularUcfirst }}Create::class)->name('{{ pluralStrtolower }}.create');
+    Route::get('/dashboard/{{ pluralStrtolower }}/edit/{recordId}',{{ singularUcfirst }}Edit::class)->name('{{ pluralStrtolower }}.edit');
+
+    
+
+
+   
+});

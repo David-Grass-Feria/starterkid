@@ -30,17 +30,13 @@ class WebInstallCommand extends Command
     public function handle()
     {
         
-        try {
-        Artisan::call('migrate',['--force' => true]);
+      
+        Artisan::call('migrate:fresh');
         Artisan::call('db:seed', ['class'=> 'GrassFeria\\StarterkidSetting\\Database\\Seeders\\SettingSeeder']);
         Artisan::call('db:seed', ['class'=> 'GrassFeria\\StarterkidUser\\Database\\Seeders\\AdminSeeder']);
 
         return $this->info('Great! You can login on<br>'.url('/login').'<br>email: admin@admin.com<br>password: password');
-        } catch (UniqueConstraintViolationException $e) {
-            $this->error('You already have all the entries in the database. You can log in.');
-        } catch (QueryException $e) {
-            $this->error('No database connection.');
-        }
+       
         
        
     }

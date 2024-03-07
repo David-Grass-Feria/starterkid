@@ -24,7 +24,7 @@
       "thumb-name":"{{ thumbPlugin }}",
       "thumb-vendor":"{{ thumbVendor }}",
       "logo-url":"https://ischtvan.de/wp-content/uploads/2023/03/All-Inkl-Logo.jpg",
-      "laravel": {
+      "starterkid": {
         "providers": [
           "{{ vendor }}\\{{ plugin }}\\Providers\\AppServiceProvider"
         ]

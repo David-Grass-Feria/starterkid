@@ -44,13 +44,13 @@ class SettingPlugin extends Component
 
             if (File::exists($composerPath)) {
                 $composerContent = json_decode(File::get($composerPath), true);
-                $providers = $composerContent['extra']['laravel']['providers'] ?? [];
+                $providers = $composerContent['extra']['starterkid']['providers'] ?? [];
                 $isActive = false;
-
+                
                 foreach ($providers as $provider) {
                     
                     if (collect(app()->getLoadedProviders())->keys()->contains($provider)) {
-
+                        
                         $isActive = true;
                         break;
                     }

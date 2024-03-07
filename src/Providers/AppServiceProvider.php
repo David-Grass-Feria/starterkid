@@ -8,11 +8,12 @@ use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use App\Providers\PluginServiceProvider;
 use Illuminate\Console\Scheduling\Schedule;
+use GrassFeria\Starterkid\Console\Commands\WebInstallCommand;
 use GrassFeria\Starterkid\Console\Commands\MakeResourceCommand;
 use GrassFeria\Starterkid\Console\Commands\ClearTempFoldersCommand;
 use GrassFeria\Starterkid\Console\Commands\ComposerDumpAutoloadCommand;
-use GrassFeria\Starterkid\Console\Commands\WebInstallCommand;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->register(RouteServiceProvider::class);
         $this->app->register(AuthServiceProvider::class);
         $this->app->register(NavlinkServiceProvider::class);
+        $this->app->register(PluginServiceProvider::class);
         
         
         

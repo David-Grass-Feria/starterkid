@@ -1,55 +1,97 @@
 ## Only for a fresh Laravel with Jetstream installation
 
 # install predis
+```shell
 composer require predis/predis
+```
 
 # install telescope
+```shell
 composer require laravel/telescope
+```
+```shell
 php artisan telescope:install
+```
+
+# install horizon
+```shell
+composer require laravel/horizon
+```
+```shell
+php artisan horizon:install 
+```
 
 # install spatie medialibary
+```shell
 composer require "spatie/laravel-medialibrary:^11.0.0"
+```
+```shell
 php artisan vendor:publish --provider="Spatie\MediaLibrary\MediaLibraryServiceProvider" --tag="medialibrary-migrations"
+```
 
 # install spatie backup
+```shell
 composer require spatie/laravel-backup
+```
 
 # install debugbar
+```shell
 composer require barryvdh/laravel-debugbar --dev
+```
 
 # sftp filesystem
+```shell
 composer require league/flysystem-sftp-v3
+```
 
-# add this line in /composer.json/autoload/psr-4
-"Modules\\": "Modules/",
-"Plugins\\": "Plugins/"
+# add this line in /composer.json
+```shell
+"grass-feria/starterkid": "dev-main",
+```
+
+```code
+"repositories": [
+        
+        {
+            "type": "path",
+            "url": "packages/grass-feria/starterkid",
+            "options": {
+                "symlink": true
+            }
+        }
+        
+        
+    ]
+```
 
 # run the command
+```shell
 composer dump-autoload
-
-# add the provider in /config/app.php
-GrassFeria\Starterkid\Providers\AppServiceProvider::class,
-GrassFeria\StarterkidSetting\Providers\AppServiceProvider::class,
-GrassFeria\StarterkidUser\Providers\AppServiceProvider::class,
-GrassFeria\StarterkidDashboard\Providers\AppServiceProvider::class,
-
+```
 
 # publish all assets
+```shell
 php artisan vendor:publish --provider="GrassFeria\Starterkid\Providers\AppServiceProvider" --force
+```
 
 # migrate database
-php artisan migrate:fresh
-
+```shell
+php artisan starterkid:install
+```
 
 # generate app key
 php artisan key:generate
 
 # storage link
+```shell
 php artisan storage:link
-
+```
 
 # scheduler
+```shell
 php8.2 /home/davidgrassferia/laravel/starterkid/artisan schedule:run
+```
+
 
 
 

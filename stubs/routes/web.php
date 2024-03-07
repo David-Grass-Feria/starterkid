@@ -1,6 +1,8 @@
 <?php
 
 
+
+use App\Http\Livewire\Dashboard;
 use Illuminate\Support\Facades\Route;
 
 
@@ -20,3 +22,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect('/dashboard');
 });
+
+Route::get('/dashboard',Dashboard::class)->name('dashboard');

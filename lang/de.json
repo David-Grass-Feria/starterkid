@@ -28,8 +28,26 @@
     "Delete":                                                                                           "Löschen",
     "Reset":                                                                                            "Zurücksetzen",
     "Edit":                                                                                             "Bearbeiten",   
-    "Are you sure?":                                                                                    "Bist du sicher?"
-
+    "Are you sure?":                                                                                    "Bist du sicher?",
+    "Settings":                                                                                         "Einstellungen",
+    "Go to Laravel Telescope":                                                                          "Gehe zu Laravel Telescope",
+    "Go to Laravel Horizon":                                                                            "Gehe zu Laravel Horizon",
+    "Primary color":                                                                                    "Hauptfarbe",
+    "Secondary color":                                                                                  "Zweitefarbe",
+    "Font color":                                                                                       "Schriftfarbe",
+    "Font color dark background":                                                                       "Schriftfarbe auf dunklen Hintergrund",
+    "Font family":                                                                                      "Schriftart",
+    "Go to fontbunny website and search your font name":                                                "Gehe auf die Fontbunny Webseite und suche deine Schriftart",
+    "Go to Favicon Generator website and upload the zip file":                                          "Gehe auf die Favicon Generator Webseite und lade das Zip File hoch",
+    "Reset settings":                                                                                   "Einstellungen zurücksetzen",
+    "Remove temporary files remnants":                                                                  "Entferne Dateireste aus Temp Ordner",
+    "Activate/Deactivate":                                                                              "Aktivieren/Deaktiveren",
+    "Users":                                                                                            "Benutzer",
+    "Create user":                                                                                      "Benutzer erstellen",
+    "Password":                                                                                         "Passwort",
+    "Confirm Password":                                                                                 "Passwort bestätigen",
+    "User created":                                                                                     "Benutzer erstellt",
+    "User updated":                                                                                     "Benutzer aktualisiert"
 
 
 

@@ -27,7 +27,7 @@ class UnzipFaviconJob implements ShouldQueue
      */
     public function handle()
     {
-        $setting = \GrassFeria\StarterkidSetting\Models\Setting::find(1);
+        $setting = \GrassFeria\Starterkid\Models\Setting::find(1);
         $folderId = $setting->getMedia('favicon')[0]->id;
         
         $zip = new ZipArchive;

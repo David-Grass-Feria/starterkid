@@ -45,7 +45,7 @@ class AppServiceProvider extends ServiceProvider
         if(Schema::hasTable('settings')){
             
         
-        $setting = \GrassFeria\StarterkidSetting\Models\Setting::find(1);
+        $setting = \GrassFeria\Starterkid\Models\Setting::find(1);
         if($setting){
             View::share('settingPrimaryColor', $setting->primary_color);
             View::share('settingSecondaryColor', $setting->secondary_color);
@@ -70,7 +70,7 @@ class AppServiceProvider extends ServiceProvider
                 }
             }
         }
-        
+        $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
         $this->loadViewsFrom(__DIR__.'/../../resources/views', 'starterkid');
         $this->loadJsonTranslationsFrom(__DIR__.'/../../lang');
         
@@ -80,7 +80,12 @@ class AppServiceProvider extends ServiceProvider
         Livewire::component('starterkid::show-video', \GrassFeria\Starterkid\Livewire\ShowVideo::class);
         Livewire::component('starterkid::show-vimeo-video', \GrassFeria\Starterkid\Livewire\ShowVimeoVideo::class);
         Livewire::component('starterkid::show-youtube-video', \GrassFeria\Starterkid\Livewire\ShowYoutubeVideo::class);
+        Livewire::component('starterkid::setting-edit',\GrassFeria\Starterkid\Livewire\Setting\SettingEdit::class);
+        Livewire::component('starterkid::setting-plugin',\GrassFeria\Starterkid\Livewire\Setting\SettingPlugin::class);
         Livewire::component(\GrassFeria\Starterkid\Traits\LivewireIndexTrait::class);
+        Livewire::component('user::user-create',\GrassFeria\Starterkid\Livewire\User\UserCreate::class);
+        Livewire::component('user::user-edit',\GrassFeria\Starterkid\Livewire\User\UserEdit::class);
+        Livewire::component('user::user-index',\GrassFeria\Starterkid\Livewire\User\UserIndex::class);
 
        
 
@@ -94,14 +99,6 @@ class AppServiceProvider extends ServiceProvider
         ]);
 
         
-
-        
-        $this->app->booted(function () {
-            $schedule = $this->app->make(Schedule::class);
-            $schedule->command('queue:work')->everyMinute()->withoutOverlapping();
-            $schedule->command('backup:run')->everyFiveMinutes();
-            $schedule->command('backup:clean')->weekly();
-        });
         
 
         $this->publishes([

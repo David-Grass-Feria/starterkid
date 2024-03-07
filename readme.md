@@ -53,8 +53,8 @@ composer require league/flysystem-sftp-v3
 "repositories": [
         
         {
-            "type": "path",
-            "url": "packages/grass-feria/starterkid",
+            "type": "vcs",
+            "url": "https://github.com/David-Grass-Feria/starterkid",
             "options": {
                 "symlink": true
             }
@@ -66,7 +66,7 @@ composer require league/flysystem-sftp-v3
 
 # run the command
 ```shell
-composer dump-autoload
+composer update
 ```
 
 # publish all assets
@@ -78,9 +78,6 @@ php artisan vendor:publish --provider="GrassFeria\Starterkid\Providers\AppServic
 ```shell
 php artisan starterkid:install
 ```
-
-# generate app key
-php artisan key:generate
 
 # storage link
 ```shell

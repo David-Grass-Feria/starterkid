@@ -1,4 +1,4 @@
-<div x-data x-init="initFilepond()">
+<div x-data>
 
 
     @push('styles')
@@ -45,6 +45,11 @@
 
     @endpush
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => { 
+            initFilepond();
+        })
+    </script>
 
     <div wire:ignore>
 

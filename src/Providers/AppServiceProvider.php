@@ -27,7 +27,11 @@ class AppServiceProvider extends ServiceProvider
         $this->app->register(RouteServiceProvider::class);
         $this->app->register(AuthServiceProvider::class);
         $this->app->register(NavlinkServiceProvider::class);
-        $this->app->register(PluginServiceProvider::class);
+        
+        if (class_exists(PluginServiceProvider::class)) {
+            $this->app->register(PluginServiceProvider::class);
+        }
+        
         
         
         

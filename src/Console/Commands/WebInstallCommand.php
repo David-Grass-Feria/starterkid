@@ -32,8 +32,8 @@ class WebInstallCommand extends Command
         
       
         Artisan::call('migrate:fresh');
-        Artisan::call('db:seed', ['class'=> 'GrassFeria\\StarterkidSetting\\Database\\Seeders\\SettingSeeder']);
-        Artisan::call('db:seed', ['class'=> 'GrassFeria\\StarterkidUser\\Database\\Seeders\\AdminSeeder']);
+        Artisan::call('db:seed', ['class'=> 'GrassFeria\\Starterkid\\Database\\Seeders\\SettingSeeder']);
+        Artisan::call('db:seed', ['class'=> 'GrassFeria\\Starterkid\\Database\\Seeders\\AdminSeeder']);
 
         return $this->info('Great! You can login on<br>'.url('/login').'<br>email: admin@admin.com<br>password: password');
        

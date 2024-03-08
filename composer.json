@@ -12,7 +12,10 @@
     "autoload": {
       
       "psr-4": {
-        "GrassFeria\\Starterkid\\": "src"
+        "GrassFeria\\Starterkid\\": "src",
+        "GrassFeria\\Starterkid\\Database\\Factories\\": "database/factories/",
+        "GrassFeria\\Starterkid\\Database\\Migrations\\": "database/migrations/",
+        "GrassFeria\\Starterkid\\Database\\Seeders\\": "database/seeders/"
       }
     },
     

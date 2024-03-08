@@ -89,6 +89,11 @@ php artisan storage:link
 php8.2 /home/davidgrassferia/laravel/starterkid/artisan schedule:run
 ```
 
+# forms
+```shell
+php8.2 /home/davidgrassferia/laravel/starterkid/artisan schedule:run
+```
+
 
 
 

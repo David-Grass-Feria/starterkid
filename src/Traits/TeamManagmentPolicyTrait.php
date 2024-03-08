@@ -14,6 +14,11 @@ trait TeamManagmentPolicyTrait
 
     public function view(User $user, Model $model): bool
     {
+        
+        if($model->team_id === $user->personalTeam()->id){
+            return true;
+        }
+        
         if ($model->team_id === $user->currentTeam->id && $user->hasTeamRole($model->team, 'admin')) {
             return true;
         }
@@ -34,6 +39,11 @@ trait TeamManagmentPolicyTrait
 
     public function update(User $user, Model $model): bool
     {
+        
+        if($model->team_id === $user->personalTeam()->id){
+            return true;
+        }
+        
         if ($model->team_id === $user->currentTeam->id && $user->hasTeamRole($model->team, 'admin')) {
             return true;
         }
@@ -46,6 +56,10 @@ trait TeamManagmentPolicyTrait
 
     public function delete(User $user, Model $model): bool
     {
+        if($model->team_id === $user->personalTeam()->id){
+            return true;
+        }
+        
         return $model->team_id === $user->currentTeam->id && $user->hasTeamRole($model->team, 'admin');
     }
 }

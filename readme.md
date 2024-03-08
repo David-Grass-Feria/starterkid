@@ -39,6 +39,11 @@ composer require spatie/laravel-backup
 composer require barryvdh/laravel-debugbar --dev
 ```
 
+```shell
+php artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider"
+```
+
+
 # sftp filesystem
 ```shell
 composer require league/flysystem-sftp-v3

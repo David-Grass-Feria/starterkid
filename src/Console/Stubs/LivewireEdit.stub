@@ -19,11 +19,9 @@ class {{ singularUcfirst }}Edit extends Component
     public function mount($recordId = null)
     {
         
-        try {
-                $this->{{ singularStrtolower }}       = \{{ vendor }}\{{ plugin }}\Models\{{ singularUcfirst }}::find($recordId);
-        } catch (\Illuminate\Database\QueryException) {
-            abort(403, __('Your plugin needs a database update.'));
-        }
+       
+        $this->{{ singularStrtolower }}       = \{{ vendor }}\{{ plugin }}\Models\{{ singularUcfirst }}::find($recordId);
+      
         $this->authorize('update',[\{{ vendor }}\{{ plugin }}\Models\{{ singularUcfirst }}::class,$this->{{ singularStrtolower }}]);
         //$this->date                                 = $this->{{ singularStrtolower }}->date->format(config('starterkid.time_format.date_format_for_picker'));
         //$this->date_time                            = $this->{{ singularStrtolower }}->date_time->format(config('starterkid.time_format.date_time_format_for_picker'));

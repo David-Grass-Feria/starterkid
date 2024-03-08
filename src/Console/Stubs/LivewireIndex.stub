@@ -38,8 +38,7 @@ class {{ singularUcfirst }}Index extends Component
     public function render()
     {
 
-        try {
-
+      
         ${{ pluralStrtolower }} = \{{ vendor }}\{{ plugin }}\Models\{{ singularUcfirst }}::query()
         ->with('media')
         ->select('id','team_id')
@@ -54,8 +53,6 @@ class {{ singularUcfirst }}Index extends Component
 
         return view('{{ pluginStrToLower }}::livewire.{{ singularStrtolowerKebab }}.{{ singularStrtolowerKebab }}-index',['{{ pluralStrtolower }}' => ${{ pluralStrtolower }}]);
 
-        } catch (\Illuminate\Database\QueryException) {
-            abort(403, __('Your plugin needs a database update.'));
-        }
+        
     }
 }

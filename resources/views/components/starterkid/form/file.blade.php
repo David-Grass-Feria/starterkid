@@ -54,7 +54,7 @@
                 <x-starterkid::starterkid.required />
             @endif
         </div>
-        <input type="file" {{ $attributes }} />
+        <input type="file" @if($multiple) multiple @endif {{ $attributes }} />
         @if (isset($description))
             <x-starterkid::starterkid.input-description>{{ $description }}</x-starterkid::starterkid.input-description>
         @endif

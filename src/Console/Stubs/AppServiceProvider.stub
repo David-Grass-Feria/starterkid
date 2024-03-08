@@ -61,7 +61,7 @@ class AppServiceProvider extends ServiceProvider
 
         
         // create private disk
-        //$this->app->config->set('filesystems.disks.photo_disk', [
+        //$this->app->config->set('filesystems.disks.photo', [
         //    'driver'   => env('PHOTO_DISK','local'), //local or sftp
         //    'root'     => 'photos',
         //    'host'     => env('STORAGEBOX_HOST',''),

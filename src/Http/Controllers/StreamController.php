@@ -17,7 +17,7 @@ class StreamController extends Controller
 
     public function stream(Media $media, $recordId): StreamedResponse
     {
-        $record = \GrassFeria\StarterkidTester\Models\Post::find($recordId);
+        $record = $media->model_type::find($recordId);
 
         if ($media->disk !== 'public') {
             $this->authorize('update', [$media->model_type, $record]);

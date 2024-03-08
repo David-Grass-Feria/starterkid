@@ -47,11 +47,7 @@
       
         @endpush
         
-        <script>
-            document.addEventListener('DOMContentLoaded', () => { 
-                initFilepond();
-            })
-        </script>
+     
 
     <div wire:ignore class="mb-5">
         <div class="flex items-center">

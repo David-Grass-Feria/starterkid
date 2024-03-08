@@ -1,4 +1,4 @@
-<div x-data>
+<div x-data x-init="initFilepond()">
 
 
     @push('styles')
@@ -18,7 +18,7 @@
             FilePond.registerPlugin(FilePondPluginFileValidateSize);
 
             const pond = FilePond.create(document.getElementById('{{ $for }}'), {
-
+                allowMultiple: {{ $attributes->has('multiple') ? 'true' : 'false' }},
                 allowFileSizeValidation: true,
                 maxFileSize: '{{ $maxFileSize }}',
                 maxTotalFileSize: '{{ $maxTotalFileSize }}',
@@ -46,11 +46,7 @@
 
     @endpush
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => { 
-            initFilepond();
-        })
-    </script>
+ 
 
     <div wire:ignore>
 
@@ -60,7 +56,7 @@
                 <x-starterkid::starterkid.required />
             @endif
         </div>
-        <input type="file" {{ $attributes }} />
+        <input type="file" {{ $attributes }} @if($attributes->has('multiple')) multiple @endif />
         @if (isset($description))
             <x-starterkid::starterkid.input-description>{{ $description }}</x-starterkid::starterkid.input-description>
         @endif

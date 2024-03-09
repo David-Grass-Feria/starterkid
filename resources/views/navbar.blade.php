@@ -5,6 +5,18 @@
       {{__('Dashboard')}}
 </x-starterkid::starterkid.nav-link>
 
+@foreach($navLinks as $link)
+  @if(Route::has($link['route']))
+@can($link['permission'], $link['model'])
+<x-starterkid::starterkid.nav-link href="{{ route($link['route']) }}" :active="request()->routeIs($link['active']),">
+        {!! $link['icon'] !!}
+        {{ $link['title_' . config('app.locale')] ?? $link['title_en'] }}
+    </x-starterkid::starterkid.nav-link>
+  
+@endcan
+@endif
+@endforeach
+
 @can('update',\GrassFeria\Starterkid\Models\Setting::class)
 <x-starterkid::starterkid.nav-link href="{{route('settings.edit',1)}}" :active="request()->routeIs(['settings.edit','settings.plugin','setting.migrate'])">
   <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="h-5 w-5" viewBox="0 0 16 16">
@@ -28,20 +40,7 @@
 
   
 
-  @foreach($navLinks as $link)
-  
 
-
-  @if(Route::has($link['route']))
- @can($link['permission'], $link['model'])
-  <x-starterkid::starterkid.nav-link href="{{ route($link['route']) }}" :active="request()->routeIs($link['active']),">
-          {!! $link['icon'] !!}
-          {{ $link['title_' . config('app.locale')] ?? $link['title_en'] }}
-      </x-starterkid::starterkid.nav-link>
-    
-  @endcan
-@endif
-@endforeach
 
 
 

@@ -44,9 +44,9 @@ class {{ singularUcfirst }}Index extends Component
         ->select('id','team_id')
         ->ofTeam(auth()->user()->currentTeam->id)
         //->where(function($query) {
-        //$query->where('id', 'REGEXP', $this->search)
-            //->orWhere('title', 'REGEXP', $this->search)
-            //->orWhere('body', 'REGEXP', $this->search);
+        //$query->where('id','like','%'.$this->search.'%')
+        //    ->orWhere('title','like','%'.$this->search.'%');
+        //    
         //})
         ->orderBy($this->orderBy, $this->sort)
         ->paginate($this->perPage);

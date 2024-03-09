@@ -129,7 +129,7 @@
 </x-slot>
 </x-starterkid::starterkid.form.file>
 @if(isset($this->post))
-<starterkid::show-video lazy key="public_videos_{{$post->id}}" :record="$post" collection="videos" videoClass="w-full h-full aspect-video mb-5" />
+<livewire-starterkid::show-video lazy key="public_videos_{{$post->id}}" :record="$post" collection="videos" videoClass="w-full h-full aspect-video mb-5" />
 @endif
 ```
 

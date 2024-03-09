@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\ServiceProvider;
 use App\Providers\PluginServiceProvider;
 use Illuminate\Console\Scheduling\Schedule;
@@ -48,33 +49,37 @@ class AppServiceProvider extends ServiceProvider
         
         
        
-        if(Schema::hasTable('settings')){
-            
-        
-        $setting = \GrassFeria\Starterkid\Models\Setting::find(1);
-        if($setting){
-            View::share('settingPrimaryColor', $setting->primary_color);
-            View::share('settingSecondaryColor', $setting->secondary_color);
-            View::share('settingFontColor', $setting->font_color);
-            View::share('settingFontColorOnDarkBackground', $setting->font_color_on_dark_background);
-            View::share('settingFontFamily', $setting->font_family);
-        
-        
-
-                if ($setting->hasMedia('logo')) {
-                    $logo = Cache::rememberForever('logo', function () use ($setting) {
-                        return $setting->getFirstMediaUrl('logo');
-                    });
-                }
-
-                if ($setting->hasMedia('favicon')) {
-                    $favicon = Cache::rememberForever('favicon', function () use ($setting) {
-                        return $setting->getMedia('favicon')[0]->id;
-                    });
-                    $folderId = Cache::get('favicon');
-                    View::share('settingsFaviconFolderId', $folderId);
+        try {
+            // Überprüfe, ob die Datenbanktabelle existiert
+            if (Schema::hasTable('settings')) {
+                $setting = \GrassFeria\Starterkid\Models\Setting::find(1);
+                if ($setting) {
+                    // Teile Einstellungen mit allen Ansichten
+                    View::share('settingPrimaryColor', $setting->primary_color);
+                    View::share('settingSecondaryColor', $setting->secondary_color);
+                    View::share('settingFontColor', $setting->font_color);
+                    View::share('settingFontColorOnDarkBackground', $setting->font_color_on_dark_background);
+                    View::share('settingFontFamily', $setting->font_family);
+    
+                    // Logo und Favicon Logik
+                    if ($setting->hasMedia('logo')) {
+                        $logo = Cache::rememberForever('logo', function () use ($setting) {
+                            return $setting->getFirstMediaUrl('logo');
+                        });
+                    }
+    
+                    if ($setting->hasMedia('favicon')) {
+                        $favicon = Cache::rememberForever('favicon', function () use ($setting) {
+                            return $setting->getMedia('favicon')[0]->id;
+                        });
+                        $folderId = Cache::get('favicon');
+                        View::share('settingsFaviconFolderId', $folderId);
+                    }
                 }
             }
+        } catch (QueryException $e) {
+            // Datenbankverbindung fehlgeschlagen oder Tabelle nicht gefunden
+            // Logge den Fehler oder handle ihn, wie benötigt
         }
         $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
         $this->loadViewsFrom(__DIR__.'/../../resources/views', 'starterkid');

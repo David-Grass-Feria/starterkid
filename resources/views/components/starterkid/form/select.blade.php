@@ -27,7 +27,7 @@
                 });
                 $('#{{ $for }}').on('change', function(e) {
                     var data = $('#{{ $for }}').select2("val");
-                    @this.set('{{ $for }}', data,false);
+                    @this.set('{{ $for }}', data);
                 });
             }
             

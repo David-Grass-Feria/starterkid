@@ -60,20 +60,7 @@ class AppServiceProvider extends ServiceProvider
         //$kernel->prependMiddlewareToGroup('web', \{{ vendor }}\{{ plugin }}\Http\Middleware\CheckIfAppIsLocal::class);
 
         
-        // create private disk
-        //$this->app->config->set('filesystems.disks.photo', [
-        //    'driver'   => env('PHOTO_DISK','local'), //local or sftp
-        //    'root'     => 'photos',
-        //    'host'     => env('STORAGEBOX_HOST',''),
-        //    'username' => env('STORAGEBOX_USERNAME',''),
-        //    'password' => env('STORAGEBOX_PASSWORD',''),
-        //    'visibility' => 'private',
-        //    'directory_visibility' => 'private',
-        //    'maxTries' => 4,
-        //    'port' => 22,
-        //    'timeout' => 30,
-        //    'useAgent' => false,
-        //]);
+        
 
 
        

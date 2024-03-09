@@ -53,7 +53,7 @@
 #### select2
 
 ```shell
-<x-starterkid::starterkid.form.select wire:model="country" for="country" id="country" label="{{__('Countrys)}}" placeholder="{{__('Choose your country')}}" required>
+<x-starterkid::starterkid.form.select wire:model="country" for="country" id="country" label="{{__('Countrys')}}" placeholder="{{__('Choose your country')}}" required>
 <option value="usa">Usa</option>
 <option value="germany">Germany</option>
 </x-starterkid::starterkid.form.select>
@@ -129,7 +129,7 @@
 </x-slot>
 </x-starterkid::starterkid.form.file>
 @if(isset($this->post))
-<starterkid::show-video lazy key="public_videos_{{$post->id}}" :record="$post" collection="videos" videoClass="w-full h-full aspect-video mb-5" />
+<livewire-starterkid::show-video lazy key="public_videos_{{$post->id}}" :record="$post" collection="videos" videoClass="w-full h-full aspect-video mb-5" />
 @endif
 ```
 

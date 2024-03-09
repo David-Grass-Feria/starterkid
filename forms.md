@@ -53,7 +53,7 @@
 #### select2
 
 ```shell
-<x-starterkid::starterkid.form.select wire:model="country" for="country" id="country" label="{{__('Countrys)}}" placeholder="{{__('Choose your country')}}" required>
+<x-starterkid::starterkid.form.select wire:model="country" for="country" id="country" label="{{__('Countrys')}}" placeholder="{{__('Choose your country')}}" required>
 <option value="usa">Usa</option>
 <option value="germany">Germany</option>
 </x-starterkid::starterkid.form.select>

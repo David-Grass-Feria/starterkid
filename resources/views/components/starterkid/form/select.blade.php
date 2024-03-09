@@ -27,10 +27,10 @@
                 });
                 $('#{{ $for }}').on('change', function(e) {
                     var data = $('#{{ $for }}').select2("val");
-                    @this.set('{{ $for }}', data);
+                    @this.set('{{ $for }}', data,false);
                 });
             }
-            
+            initSelect2();
           
         </script>
     @endpush

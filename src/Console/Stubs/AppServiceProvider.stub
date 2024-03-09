@@ -34,9 +34,9 @@ class AppServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../../resources/views', '{{ pluginStrToLower }}');
         $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
         $this->loadJsonTranslationsFrom(__DIR__.'/../../lang');
-        Livewire::component(\{{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }}\{{ singularUcfirst }}Create::class);
-        Livewire::component(\{{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }}\{{ singularUcfirst }}Edit::class);
-        Livewire::component(\{{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }}\{{ singularUcfirst }}Index::class);
+        Livewire::component('{{ pluginKebab }}::{{ singularStrtolower }}-create',\{{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }}\{{ singularUcfirst }}Create::class);
+        Livewire::component('{{ pluginKebab }}::{{ singularStrtolower }}-create',\{{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }}\{{ singularUcfirst }}Edit::class);
+        Livewire::component('{{ pluginKebab }}::{{ singularStrtolower }}-create',\{{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }}\{{ singularUcfirst }}Index::class);
 
         $this->publishes([
             __DIR__.'/../../config/navlink.php' => base_path('/config/starterkid/{{ vendorKebab }}/{{ pluginKebab }}/navlink.php'),

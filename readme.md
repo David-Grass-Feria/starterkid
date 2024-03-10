@@ -5,14 +5,6 @@
 composer require predis/predis
 ```
 
-# install telescope
-```shell
-composer require laravel/telescope
-```
-```shell
-php artisan telescope:install
-```
-
 # install horizon
 ```shell
 composer require laravel/horizon
@@ -74,12 +66,7 @@ composer require league/flysystem-sftp-v3
 composer update
 ```
 
-# publish all assets
-```shell
-php artisan vendor:publish --provider="GrassFeria\Starterkid\Providers\AppServiceProvider" --force
-```
-
-# migrate database
+# migrate database and publish assets
 ```shell
 php artisan starterkid:install
 ```

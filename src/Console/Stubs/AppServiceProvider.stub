@@ -59,27 +59,7 @@ class AppServiceProvider extends ServiceProvider
         // middleware you must load (Kernel $kernel) in boot
         //$kernel->prependMiddlewareToGroup('web', \{{ vendor }}\{{ plugin }}\Http\Middleware\CheckIfAppIsLocal::class);
 
-        // create private disk
-        //Config::set('filesystems.disks.backup', [
-        //    'driver' => env('BACKUP_DISK', 'local'),
-        //    'root' => env('BACKUP_DISK') == 'sftp' ? 'backups' : (env('BACKUP_DISK') == 'local' ? storage_path('app/backups') : null),
-        //    // for sftp
-        //    'host' => env('BACKUP_DISK') == 'sftp' ? env('STORAGEBOX_HOST', '') : null,
-        //    'username' => env('BACKUP_DISK') == 'sftp' ? env('STORAGEBOX_USERNAME', '') : null,
-        //    'password' => env('BACKUP_DISK') == 'sftp' ? env('STORAGEBOX_PASSWORD', '') : null,
-        //    'visibility' => 'private',
-        //    'directory_visibility' => 'private',
-        //    'maxTries' => env('BACKUP_DISK') == 'sftp' ? 4 : null,
-        //    'port' => env('BACKUP_DISK') == 'sftp' ? 22 : null,
-        //    'timeout' => env('BACKUP_DISK') == 'sftp' ? 30 : null,
-        //    'useAgent' => env('BACKUP_DISK') == 'sftp' ? false : null,
-        //    // for s3
-        //    'key' => env('BACKUP_DISK') == 's3' ? env('AWS_ACCESS_KEY_ID') : null,
-        //    'secret' => env('BACKUP_DISK') == 's3' ? env('AWS_SECRET_ACCESS_KEY') : null,
-        //    'region' => env('BACKUP_DISK') == 's3' ? env('AWS_DEFAULT_REGION') : null,
-        //    'bucket' => env('BACKUP_DISK') == 's3' ? env('AWS_BUCKET') : null,
-        //    'url' => env('BACKUP_DISK') == 's3' ? env('AWS_URL') : null,
-        //]);
+       
         
 
 

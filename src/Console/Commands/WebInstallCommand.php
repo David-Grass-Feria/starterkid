@@ -31,7 +31,7 @@ class WebInstallCommand extends Command
     {
         
       
-        Artisan::call('migrate:fresh');
+        Artisan::call('migrate',['--force' => true]);
         Artisan::call('db:seed', ['class'=> 'GrassFeria\\Starterkid\\Database\\Seeders\\SettingSeeder']);
         Artisan::call('db:seed', ['class'=> 'GrassFeria\\Starterkid\\Database\\Seeders\\AdminSeeder']);
 

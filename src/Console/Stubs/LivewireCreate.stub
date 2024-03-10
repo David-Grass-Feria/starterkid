@@ -49,7 +49,7 @@ class {{ singularUcfirst }}Create extends Component
         
         
         $this->authorize('create',\{{ vendor }}\{{ plugin }}\Models\{{ singularUcfirst }}::class);
-        $validated = array_merge($validated, ['team_id' => auth()->user()->currentTeam->id]);
+        $validated = array_merge($validated, ['user_id' => auth()->user()->id]);
         $this->{{ singularStrtolower }} = \{{ vendor }}\{{ plugin }}\Models\{{ singularUcfirst }}::create($validated);
         
         //if ($this->public_photos !== []) {

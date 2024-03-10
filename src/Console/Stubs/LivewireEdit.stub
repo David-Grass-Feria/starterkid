@@ -53,7 +53,7 @@ class {{ singularUcfirst }}Edit extends Component
         
        
         $this->authorize('update',[\{{ vendor }}\{{ plugin }}\Models\{{ singularUcfirst }}::class,$this->{{ singularStrtolower }}]);
-        $validated = array_merge($validated, ['team_id' => auth()->user()->currentTeam->id]);
+        $validated = array_merge($validated, ['user_id' => auth()->user()->id]);
         $this->{{ singularStrtolower }}->update($validated);
        
 

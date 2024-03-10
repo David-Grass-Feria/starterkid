@@ -30,11 +30,11 @@ class WebInstallCommand extends Command
     public function handle()
     {
         
-      
+        
+        Artisan::call('vendor:publish',['--force' => true,'--provider' => 'GrassFeria\Starterkid\Providers\AppServiceProvider']);
         Artisan::call('migrate',['--force' => true]);
         Artisan::call('db:seed', ['class'=> 'GrassFeria\\Starterkid\\Database\\Seeders\\SettingSeeder']);
         Artisan::call('db:seed', ['class'=> 'GrassFeria\\Starterkid\\Database\\Seeders\\AdminSeeder']);
-
         return $this->info('Great! You can login on<br>'.url('/login').'<br>email: admin@admin.com<br>password: password');
        
         

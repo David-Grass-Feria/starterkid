@@ -14,7 +14,7 @@ class {{ singularUcfirst }} extends Model implements HasMedia
     use InteractsWithMedia;
 
     protected $fillable = [
-       'team_id',
+       'user_id',
     ];
 
     //protected $casts = [
@@ -25,9 +25,9 @@ class {{ singularUcfirst }} extends Model implements HasMedia
     //    
     //];
 
-    public function scopeOfTeam($query, $teamId)
+    public function scopeOfUser($query, $userId)
     {
-        return $query->where('team_id', $teamId);
+        return $query->where('user_id', $userId);
     }
 
     //public function getDate()

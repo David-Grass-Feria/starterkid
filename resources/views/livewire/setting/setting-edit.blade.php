@@ -7,9 +7,7 @@
             <a href="{{route('settings.plugin')}}" title="{{__('Plugins')}}">
                 <x-starterkid::starterkid.button-secondary type="button">{{__('Plugins')}}</x-starterkid::starterkid.button-secondary>
                 </a>
-            <a target="_blank" href="{{route('telescope')}}" title="{{__('Go to Laravel Telescope')}}">
-            <x-starterkid::starterkid.button-secondary type="button">{{__('Go to Laravel Telescope')}}</x-starterkid::starterkid.button-secondary>
-            </a>
+           
             <a target="_blank" href="{{route('horizon.index')}}" title="{{__('Go to Laravel Horizon')}}">
                 <x-starterkid::starterkid.button-secondary type="button">{{__('Go to Laravel Horizon')}}</x-starterkid::starterkid.button-secondary>
                 </a>

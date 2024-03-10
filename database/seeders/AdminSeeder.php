@@ -2,7 +2,6 @@
 
 namespace GrassFeria\Starterkid\Database\Seeders;
 
-use App\Models\Team;
 
 use App\Models\User;
 use Illuminate\Support\Str;
@@ -25,15 +24,8 @@ class AdminSeeder extends Seeder
             
 
         ]);
-        $this->createTeam($admin);
+        
     }
 
-    protected function createTeam(User $user): void
-    {
-        $user->ownedTeams()->save(Team::forceCreate([
-            'user_id' => $user->id,
-            'name' => explode(' ', $user->name, 2)[0]."'s Team",
-            'personal_team' => true,
-        ]));
-    }
+   
 }

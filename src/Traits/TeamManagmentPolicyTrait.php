@@ -15,21 +15,7 @@ trait TeamManagmentPolicyTrait
     public function view(User $user, Model $model): bool
     {
         
-        if($model->team_id === $user->personalTeam()->id){
-            return true;
-        }
-        
-        if ($model->team_id === $user->currentTeam->id && $user->hasTeamRole($model->team, 'admin')) {
-            return true;
-        }
-        if ($model->team_id === $user->currentTeam->id && $user->hasTeamRole($model->team, 'editor')) {
-            return true;
-        }
-        if ($model->team_id === $user->currentTeam->id && $user->hasTeamRole($model->team, 'observer')) {
-            return true;
-        }
-
-        return false;
+        return true;
     }
 
     public function create(User $user): bool
@@ -40,26 +26,11 @@ trait TeamManagmentPolicyTrait
     public function update(User $user, Model $model): bool
     {
         
-        if($model->team_id === $user->personalTeam()->id){
-            return true;
-        }
-        
-        if ($model->team_id === $user->currentTeam->id && $user->hasTeamRole($model->team, 'admin')) {
-            return true;
-        }
-        if ($model->team_id === $user->currentTeam->id && $user->hasTeamRole($model->team, 'editor')) {
-            return true;
-        }
-
-        return false;
+        return true;
     }
 
     public function delete(User $user, Model $model): bool
     {
-        if($model->team_id === $user->personalTeam()->id){
-            return true;
-        }
-        
-        return $model->team_id === $user->currentTeam->id && $user->hasTeamRole($model->team, 'admin');
+       return true;
     }
 }

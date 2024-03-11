@@ -4,6 +4,12 @@
 <x-starterkid::starterkid.form.text wire:model="title" for="title" id="title" type="text" label="{{__('Title')}}" required/>
 ```
 
+#### slug
+```shell
+<x-starterkid::starterkid.form.slug wire:model="slug" slug="https://service/" for="slug" id="slug" type="text" label="{{__('Slug')}}" required/>
+```
+
+
 #### youtube video
 
 ```shell

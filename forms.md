@@ -50,6 +50,16 @@
 </x-starterkid::starterkid.form.ckeditor5>
 ```
 
+#### ckeditor5 simple
+```shell
+<x-starterkid::starterkid.form.ckeditor5 wire:model="body2" for="body2" id="body2" rows="5" label="{{__('Body2')}}">
+<x-slot name="removePlugins">
+'CodeBlock','List','Highlight','HorizontalLine','BlockQuote','Indent','Table','Italic'
+</x-slot>
+</x-starterkid::starterkid.form.ckeditor5>
+```
+
+
 #### select2
 
 ```shell

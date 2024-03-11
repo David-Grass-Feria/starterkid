@@ -5,7 +5,7 @@ namespace GrassFeria\Starterkid\Traits;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
-trait TeamManagmentPolicyTrait
+trait OnlyUserRecordPolicyTrait
 {
     public function viewAny(User $user): bool
     {

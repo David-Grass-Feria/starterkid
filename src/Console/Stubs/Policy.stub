@@ -10,7 +10,7 @@ use GrassFeria\Starterkid\Traits\TeamManagmentPolicyTrait;
 class {{ singularUcfirst }}Policy
 {
    
-     use TeamManagmentPolicyTrait;
+     use OnlyUserRecordPolicyTrait;
 
    
 

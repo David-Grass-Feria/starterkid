@@ -5,7 +5,7 @@ namespace {{ vendor }}\{{ plugin }}\Policies;
 use App\Models\User;
 use \{{ vendor }}\{{ plugin }}\Models\{{ singularUcfirst }};
 use Illuminate\Auth\Access\Response;
-use GrassFeria\Starterkid\Traits\TeamManagmentPolicyTrait;
+use GrassFeria\Starterkid\Traits\OnlyUserRecordPolicyTrait;;
 
 class {{ singularUcfirst }}Policy
 {

@@ -22,6 +22,11 @@ return [
 
     ],
 
+    'locales' => [
+        'en',
+        'de'
+    ],
+
     
 
 ];

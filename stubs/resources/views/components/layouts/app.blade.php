@@ -51,7 +51,7 @@
                     </div>
 
                     <!-- Sidebar component, swap this element with another sidebar if you like -->
-                    <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-4">
+                    <div class="flex grow flex-col gap-y-5 overflow-y-auto settingSecondaryBackgroundColor px-6 pb-4">
                         <div class="flex h-16 shrink-0 items-center">
                             <a href="{{ route('dashboard') }}">
                                 <x-application-mark />
@@ -145,7 +145,7 @@
                                 </div>
                             </button>
                         @endif
-                       
+                       @include('lang-switcher')
                         
 
                         <!-- Separator -->

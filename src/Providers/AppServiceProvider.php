@@ -44,7 +44,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(Kernel $kernel)
     {
-        //$kernel->prependMiddlewareToGroup('web', \GrassFeria\Starterkid\Http\Middleware\CheckIfAppIsLocal::class);
+        //$kernel->prependMiddlewareToGroup('web', \GrassFeria\Starterkid\Http\Middleware\GetLocaleAdmin::class);
         
         
        

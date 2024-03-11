@@ -49,6 +49,7 @@ class MakeResourceCommand extends Command
         $this->createSeedersFolder();
         $this->createFactoriesFolder();
         $this->createCommandsFolder();
+        $this->createStubsFolder();
 
         $this->createAppServiceProviderFile();
         $this->createAuthServiceProviderFile();
@@ -477,6 +478,14 @@ class MakeResourceCommand extends Command
     private function createCommandsFolder()
     {
         $destinationPath = $this->getDestinationPath('/src/Console/Commands');
+        if (!File::isDirectory($destinationPath)) {
+            File::makeDirectory($destinationPath, 0755, true, false);
+        }
+    }
+
+    private function createStubsFolder()
+    {
+        $destinationPath = $this->getDestinationPath('/src/stubs');
         if (!File::isDirectory($destinationPath)) {
             File::makeDirectory($destinationPath, 0755, true, false);
         }

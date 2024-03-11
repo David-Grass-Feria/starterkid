@@ -23,7 +23,7 @@
     "extra": {
       "thumb-name":"{{ thumbPlugin }}",
       "thumb-vendor":"{{ thumbVendor }}",
-      "logo-url":"https://ischtvan.de/wp-content/uploads/2023/03/All-Inkl-Logo.jpg",
+      "logo-url":"/{{ pluginKebab }}.png",
       "starterkid": {
         "providers": [
           "{{ vendor }}\\{{ plugin }}\\Providers\\AppServiceProvider"

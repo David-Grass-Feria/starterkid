@@ -1,4 +1,4 @@
-<div x-data x-init="initCKEditor()">
+<div x-data>
     
     @push('styles')
         <link rel="stylesheet"
@@ -19,33 +19,32 @@
         </style>
     @endpush
     
-    <script src="{{ asset('vendor/ckeditor5/ckeditor5-41.1.0/build/ckeditor.js') }}"></script>  
-    @push('scripts')
+    
+    
     
     <script>
-
-        function initCKEditor() {
-                    
-                     const editor = ClassicEditor.create(document.getElementById('{{ $for }}'), {
-                            
-                            
-        
-                        })
-                        .then(editor => {
-        
-                            editor.model.document.on('change:data', () => {
-                                @this.set('{{$for}}', editor.getData(),false);
-                            })
-                        })
-                        .catch(error => {
-                            console.log(error);
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!window.ckEditors) {
+                window.ckEditors = {};
+            }
+    
+            const editorElement = document.getElementById('{{ $for }}');
+            if (editorElement && !window.ckEditors['{{ $for }}']) {
+                ClassicEditor.create(editorElement)
+                    .then(editor => {
+                        window.ckEditors['{{ $for }}'] = editor;
+                        editor.model.document.on('change:data', () => {
+                            @this.set('{{ $for }}', editor.getData(), false);
                         });
-        
-        }
-       
-        </script>
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+            }
+        });
+    </script>
       
-        @endpush
+    
         
      
 

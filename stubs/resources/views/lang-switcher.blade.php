@@ -1,3 +1,4 @@
+<div class="notranslate">
 <ul class="flex items-center space-x-1">
     @foreach (config('starterkid.locales') as $locale)
         <li>
@@ -9,3 +10,4 @@
         </li>
     @endforeach
 </ul>
+</div>

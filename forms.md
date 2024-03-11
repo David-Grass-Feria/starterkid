@@ -4,6 +4,12 @@
 <x-starterkid::starterkid.form.text wire:model="title" for="title" id="title" type="text" label="{{__('Title')}}" required/>
 ```
 
+#### slug
+```shell
+<x-starterkid::starterkid.form.slug wire:model="slug" slug="https://service/" for="slug" id="slug" type="text" label="{{__('Slug')}}" required/>
+```
+
+
 #### youtube video
 
 ```shell
@@ -49,6 +55,16 @@
 @endif
 </x-starterkid::starterkid.form.ckeditor5>
 ```
+
+#### ckeditor5 simple
+```shell
+<x-starterkid::starterkid.form.ckeditor5 wire:model="body2" for="body2" id="body2" rows="5" label="{{__('Body2')}}">
+<x-slot name="removePlugins">
+'CodeBlock','List','Highlight','HorizontalLine','BlockQuote','Indent','Table','Italic','Heading'
+</x-slot>
+</x-starterkid::starterkid.form.ckeditor5>
+```
+
 
 #### select2
 

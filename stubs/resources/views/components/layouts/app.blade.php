@@ -15,7 +15,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     
     
-    <script src="{{ asset('vendor/ckeditor5/ckeditor5-41.1.0/build/ckeditor.js') }}"></script>
+    <script src="{{ asset('vendor/ckeditor5/ckeditor5/build/ckeditor.js') }}"></script>
     <script src="{{ asset('vendor/filepond/filepond-master/dist/filepond.min.js') }}"></script>
     <script src="{{ asset('vendor/filepond/filepond-master/dist/filepond-plugin-file-validate-type.js') }}"></script>
     <script src="{{ asset('vendor/filepond/filepond-master/dist/filepond-plugin-file-validate-size.js') }}"></script>   

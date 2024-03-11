@@ -2,7 +2,7 @@
     
     @push('styles')
         <link rel="stylesheet"
-            href="{{ asset('vendor/ckeditor5/ckeditor5-41.1.0/content-styles.css') }}"
+            href="{{ asset('vendor/ckeditor5/ckeditor5/content-styles.css') }}"
             type="text/css">
         <style>
             .ck-editor__editable {

@@ -40,7 +40,7 @@ class {{ singularUcfirst }}Index extends Component
 
       
         ${{ pluralStrtolower }} = \{{ vendor }}\{{ plugin }}\Models\{{ singularUcfirst }}::query()
-        ->with('media','user')
+        ->with('media')
         ->select('id','user_id')
         ->ofUser(auth()->user()->id)
         //->where(function($query) {

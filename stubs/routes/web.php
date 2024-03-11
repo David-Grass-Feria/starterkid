@@ -2,7 +2,7 @@
 
 
 
-use App\Http\Livewire\Dashboard;
+use App\Livewire\Dashboard;
 use Illuminate\Support\Facades\Route;
 
 

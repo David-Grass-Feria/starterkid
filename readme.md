@@ -71,6 +71,12 @@ composer update
 php artisan starterkid:install
 ```
 
+# register locale middleware in kernel web
+```shell
+\App\Http\Middleware\GetLocaleAdmin::class,
+```
+
+
 # storage link
 ```shell
 php artisan storage:link

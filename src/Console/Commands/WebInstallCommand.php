@@ -33,8 +33,14 @@ class WebInstallCommand extends Command
         
         Artisan::call('vendor:publish',['--force' => true,'--provider' => 'GrassFeria\Starterkid\Providers\AppServiceProvider']);
         Artisan::call('migrate',['--force' => true]);
-        Artisan::call('db:seed', ['class'=> 'GrassFeria\\Starterkid\\Database\\Seeders\\SettingSeeder']);
-        Artisan::call('db:seed', ['class'=> 'GrassFeria\\Starterkid\\Database\\Seeders\\AdminSeeder']);
+        
+        try {
+            Artisan::call('db:seed', ['class'=> 'GrassFeria\\Starterkid\\Database\\Seeders\\SettingSeeder']);
+            Artisan::call('db:seed', ['class'=> 'GrassFeria\\Starterkid\\Database\\Seeders\\AdminSeeder']);
+        }catch(UniqueConstraintViolationException){
+            $this->info('success');
+        }
+        
         return $this->info('Great! You can login on<br>'.url('/login').'<br>email: admin@admin.com<br>password: password');
        
         

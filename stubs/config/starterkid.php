@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'global_admin'                              => 'superadmin',             
     'max_file_size_mb'                          => env('MAX_FILE_SIZE_MB',12), //12MB
     'search_on_dashboard'                       => env('SEARCH_ON_DASHBOARD', false),
     'enable_notifications'                      => env('ENABLE_NOTIFICATIONS', false),

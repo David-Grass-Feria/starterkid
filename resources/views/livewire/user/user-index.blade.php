@@ -32,6 +32,7 @@
     <x-starterkid::starterkid.tr>
     <x-starterkid::starterkid.th></x-starterkid::starterkid.th>
     <x-starterkid::starterkid.th>{{__('ID')}}</x-starterkid::starterkid.th>
+    <x-starterkid::starterkid.th>{{__('Role')}}</x-starterkid::starterkid.th>
     <x-starterkid::starterkid.th>{{__('Name')}}</x-starterkid::starterkid.th>
     <x-starterkid::starterkid.th>{{__('Email')}}</x-starterkid::starterkid.th>
     <x-starterkid::starterkid.th>{{__('Edit')}}</x-starterkid::starterkid.th>
@@ -43,27 +44,29 @@
     <x-starterkid::starterkid.tr wire:key="tr_row_{{$user->id}}">
         <x-starterkid::starterkid.td>
         @can('delete',\App\Models\User::class)
-        @if($user->id !== 1)
+        @if($user->role !== config('starterkid.global_admin'))
             <x-starterkid::starterkid.input-checkbox wire:model.live="selected" wire:key="{{$user->id}}" value="{{$user->id}}" />
         @endif
         @endcan
         </x-starterkid::starterkid.td>
         <x-starterkid::starterkid.td>{{$user->id}}</x-starterkid::starterkid.td>
+        <x-starterkid::starterkid.td>{{ucfirst($user->role)}}</x-starterkid::starterkid.td>
         <x-starterkid::starterkid.td>{{$user->name}}</x-starterkid::starterkid.td>
         <x-starterkid::starterkid.td>{{$user->email}}</x-starterkid::starterkid.td>
+        
 
         <x-starterkid::starterkid.td>
             
             @can('update',\App\Models\User::class)
             
-            @if(auth()->user()->id === 1)
+            @if(auth()->user()->role == config('starterkid.global_admin'))
             <a href="{{route('users.edit',$user->id)}}" title="{{__('Edit')}}">
                 <x-starterkid::starterkid.button-primary type="button">{{__('Edit')}}</x-starterkid::starterkid.button-primary>
             </a>
             @else
             
             
-            @if($user->id !== 1)
+            @if($user->role !== config('starterkid.global_admin'))
             <a href="{{route('users.edit',$user->id)}}" title="{{__('Edit')}}">
                 <x-starterkid::starterkid.button-primary type="button">{{__('Edit')}}</x-starterkid::starterkid.button-primary>
             </a>

@@ -31,12 +31,9 @@ class UserIndex extends Component
         $this->authorize('delete',\App\Models\User::class);
         foreach ($this->selected as $recordId) {
             $findRecord = \App\Models\User::find($recordId);
-            foreach($findRecord->ownedTeams as $ownedTeam){
-                $ownedTeam->delete();
+            if($findRecord->role == config('starterkid.global_admin')){
+                abort(403,__('You can not delete a '.config('starterkid.global_admin')));
             }
-            $findRecord->personalTeam()->delete();
-            
-            
             $findRecord->delete();
 
         }
@@ -51,10 +48,11 @@ class UserIndex extends Component
     {
 
         $users = \App\Models\User::query($this->search)
-            ->select('id', 'name', 'email')
-            ->where('id', 'REGEXP', $this->search)
-            ->orWhere('name', 'REGEXP', $this->search)
-            ->orWhere('email', 'REGEXP', $this->search)
+            ->select('id', 'name', 'email','role')
+            ->where('id', 'like', '%' . $this->search . '%')
+            ->orwhere('name', 'like', '%' . $this->search . '%')
+            ->orwhere('email', 'like', '%' . $this->search . '%')
+            ->orwhere('role', 'like', '%' . $this->search . '%')
             ->orderBy($this->orderBy, $this->sort)
             ->paginate($this->perPage);
 

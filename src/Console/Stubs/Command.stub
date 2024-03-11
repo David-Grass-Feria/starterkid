@@ -32,9 +32,13 @@ class Install{{ plugin }}Command extends Command
         
        
             Artisan::call('migrate', ['--force' => true]);
-            //Artisan::call('vendor:publish', ['--provider'=> '{{ vendor }}\{{ plugin }}\Providers\AppServiceProvider','--force' => true]);
+            Artisan::call('vendor:publish', ['--provider'=> '{{ vendor }}\{{ plugin }}\Providers\AppServiceProvider','--force' => true]);
+            
+            //try {
             //Artisan::call('db:seed', ['class'=> '{{ vendor }}\\{{ plugin }}\\Database\\Seeders\\{{ singularUcfirst }}Seeder']);
-           
+            //}catch(UniqueConstraintViolationException){
+            //    $this->info('success');
+            //}
 
             return $this->info('GREAT! {{ plugin }} INSTALLED..');
        

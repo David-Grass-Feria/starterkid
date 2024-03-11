@@ -10,25 +10,25 @@ class UserPolicy
    
     public function viewAny(User $user): bool
     {
-        return $user->id === 1;
+        return $user->role == config('starterkid.global_admin');
     }
 
 
    
     public function create(User $user): bool
     {
-        return $user->id === 1;
+        return $user->role == config('starterkid.global_admin');
     }
 
     
     public function update(User $user): bool
     {
-        return $user->id === 1;
+        return $user->role == config('starterkid.global_admin');
     }
 
     public function delete(User $user): bool
     {
-        return $user->id === 1;
+        return $user->role == config('starterkid.global_admin');
     }
 
    

@@ -15,7 +15,7 @@ trait TeamManagmentPolicyTrait
     public function view(User $user, Model $model): bool
     {
         
-        return true;
+        return $user->id === $model->user_id;
     }
 
     public function create(User $user): bool
@@ -26,7 +26,7 @@ trait TeamManagmentPolicyTrait
     public function update(User $user, Model $model): bool
     {
         
-        return true;
+        return $user->id === $model->user_id;
     }
 
     public function delete(User $user, Model $model): bool

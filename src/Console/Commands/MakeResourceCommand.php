@@ -63,6 +63,7 @@ class MakeResourceCommand extends Command
         $this->createLivewireEditBladeFile();
         $this->createPolicyFile();
         $this->createMigrationFile();
+        $this->createNavlinkFile();
         $this->createLicenseFile();
         $this->createReadmeFile();
         $this->createDeFile();
@@ -164,6 +165,12 @@ class MakeResourceCommand extends Command
         $this->generateFile($templatePath,$destinationPath);
     }
 
+    private function createNavlinkFile()
+    {
+        $templatePath = $this->getStubsPath().'/navlink.stub';
+        $destinationPath = $this->getDestinationPath('/config/navlink.php');
+        $this->generateFile($templatePath,$destinationPath);
+    }
 
 
     private function createLicenseFile()

@@ -11,7 +11,7 @@ class SettingPolicy
    
     public function update(User $user): bool
     {
-        return $user->id === 1;
+        return $user->role == config('starterkid.global_admin');
     }
 
    

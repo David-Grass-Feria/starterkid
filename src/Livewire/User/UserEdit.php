@@ -2,6 +2,7 @@
 
 namespace GrassFeria\Starterkid\Livewire\User;
 
+use App\Models\User;
 use Livewire\Component;
 
 
@@ -17,6 +18,7 @@ class UserEdit extends Component
     public $password;
     public $password_confirmation;
     public $bio;
+    public $role;
 
 
 
@@ -30,7 +32,7 @@ class UserEdit extends Component
             $this->name         = $this->user->name;
             $this->email        = $this->user->email;
             $this->bio          = $this->user->bio;
-          
+            $this->role         = $this->user->role;
             
        
 
@@ -41,9 +43,10 @@ class UserEdit extends Component
 
        
             $validated = $this->validate([
-                'name'           => 'required|string|max:255',
-                'email'          => 'required|string|email',
-                'bio'           => 'nullable|string|max:10000',
+                'name'                              => 'required|string|max:255',
+                'email'                             => 'required|string|email',
+                'bio'                               => 'nullable|string|max:10000',
+                'role'                              => 'required|string|in:' . implode(',', array_column(User::ROLES, 'key')),
                 
      
              ]);

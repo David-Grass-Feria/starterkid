@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Laravel\Jetstream\HasTeams;
+
 use Laravel\Sanctum\HasApiTokens;
 use Laravel\Jetstream\HasProfilePhoto;
 use Illuminate\Notifications\Notifiable;
@@ -17,20 +17,27 @@ class User extends Authenticatable
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
-    use HasTeams;
     use Notifiable;
     use TwoFactorAuthenticatable;
  
 
+    
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'name', 'email', 'password','created_at','bio'
+        'name', 'email', 'password','created_at','bio','role'
     ];
 
+    const ROLES = [
+        ['key' => 'user', 'label'           => 'User: read'],
+        ['key' => 'editor', 'label'         => 'Editor: read,write'],
+        ['key' => 'admin', 'label'          => 'Administrator: read,write,delete'],
+       
+        
+    ];
     /**
      * The attributes that should be hidden for serialization.
      *

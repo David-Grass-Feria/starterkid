@@ -6,10 +6,12 @@
     @endpush
 
     
-   
+
     
     @push('scripts')
-   
+    <script src="{{ asset('vendor/filepond/filepond-master/dist/filepond.min.js') }}"></script>
+    <script src="{{ asset('vendor/filepond/filepond-master/dist/filepond-plugin-file-validate-type.js') }}"></script>
+    <script src="{{ asset('vendor/filepond/filepond-master/dist/filepond-plugin-file-validate-size.js') }}"></script>   
    <script>
         function initFilepond() {
             FilePond.registerPlugin(FilePondPluginFileValidateType);

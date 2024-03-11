@@ -19,7 +19,9 @@
         </style>
     @endpush
     
-    
+    @section('scripts')
+    <script src="{{ asset('vendor/ckeditor5/ckeditor5/build/ckeditor.js') }}"></script>
+    @endsection
     
     
     <script>

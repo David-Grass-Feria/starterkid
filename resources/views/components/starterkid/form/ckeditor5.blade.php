@@ -32,7 +32,9 @@
     
             const editorElement = document.getElementById('{{ $for }}');
             if (editorElement && !window.ckEditors['{{ $for }}']) {
-                ClassicEditor.create(editorElement)
+                ClassicEditor.create(editorElement, {
+                    removePlugins: [{{$removePlugins ?? ''}}] // Plugins, die deaktiviert werden sollen
+                })
                     .then(editor => {
                         window.ckEditors['{{ $for }}'] = editor;
                         editor.model.document.on('change:data', () => {
@@ -45,6 +47,7 @@
             }
         });
     </script>
+    
       
     
         

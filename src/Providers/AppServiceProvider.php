@@ -135,6 +135,8 @@ class AppServiceProvider extends ServiceProvider
             'bucket' => env('BACKUP_DISK') == 's3' ? env('AWS_BUCKET') : null,
             'url' => env('BACKUP_DISK') == 's3' ? env('AWS_URL') : null,
         ]);
+
+        
         
     }
 }

@@ -9,6 +9,7 @@ use GrassFeria\Starterkid\Livewire\User\UserCreate;
 use GrassFeria\Starterkid\Livewire\Setting\SettingEdit;
 use GrassFeria\Starterkid\Livewire\Setting\SettingPlugin;
 use GrassFeria\Starterkid\Http\Controllers\StreamController;
+use GrassFeria\Starterkid\Http\Controllers\Ckeditor5ImageUploadController;
 
 
 
@@ -29,6 +30,7 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/stream/files/{media}/{recordId}', [StreamController::class,'stream'])->name('stream.files');
+    Route::post('dashboard/ckeditor5/image-upload', [Ckeditor5ImageUploadController::class,'store'])->name('ckeditor5.images.store');
     Route::get('/files/{media}/{recordId}', [StreamController::class,'stream'])->name('stream.files');
     Route::get('/dashboard/settings/edit/{id}',SettingEdit::class)->name('settings.edit');
     Route::get('/dashboard/settings/plugins',SettingPlugin::class)->name('settings.plugin');

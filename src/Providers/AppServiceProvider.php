@@ -93,9 +93,9 @@ class AppServiceProvider extends ServiceProvider
         Livewire::component('starterkid::setting-edit',\GrassFeria\Starterkid\Livewire\Setting\SettingEdit::class);
         Livewire::component('starterkid::setting-plugin',\GrassFeria\Starterkid\Livewire\Setting\SettingPlugin::class);
         Livewire::component(\GrassFeria\Starterkid\Traits\LivewireIndexTrait::class);
-        Livewire::component('user::user-create',\GrassFeria\Starterkid\Livewire\User\UserCreate::class);
-        Livewire::component('user::user-edit',\GrassFeria\Starterkid\Livewire\User\UserEdit::class);
-        Livewire::component('user::user-index',\GrassFeria\Starterkid\Livewire\User\UserIndex::class);
+        Livewire::component('starterkid::user-create',\GrassFeria\Starterkid\Livewire\User\UserCreate::class);
+        Livewire::component('starterkid::user-edit',\GrassFeria\Starterkid\Livewire\User\UserEdit::class);
+        Livewire::component('starterkid::user-index',\GrassFeria\Starterkid\Livewire\User\UserIndex::class);
 
        
 

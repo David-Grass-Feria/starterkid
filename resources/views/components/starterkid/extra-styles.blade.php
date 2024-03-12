@@ -52,11 +52,26 @@
 
   }
 
-  body a {
+
+
+  .content a {
     color: var(--settingPrimaryColor);
+    text-decoration: underline;
   }
 
-  body h1 {
-    font-size:32px;
+  .content p {
+    font-size:1.2rem;
+    font-weight: normal;
+    color: #1C1C1C;
+  }
+  .content h1 {
+    font-size:2.2rem;
+    font-weight: bold;
+    color: #111827;
+  }
+  .content h2 {
+    font-size:1.4rem;
+    font-weight: bold;
+    color: #111827;
   }
 </style>

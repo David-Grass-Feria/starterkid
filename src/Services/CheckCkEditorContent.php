@@ -7,24 +7,23 @@ use DOMDocument;
 class CheckCkEditorContent
 
 {
-    
-    public $model;
+
+
     public $dbColumnName;
     public $modelDBContent;
-    public $collection;
-    public $disk;
-    
-    
-    public function __construct($model,$modelDBContent, string $dbColumnName, string $collection, string $disk)
+   
+  
+
+
+    public function __construct($modelDBContent, string $dbColumnName)
     {
-        $this->model            = $model;
+        
         $this->modelDBContent   = $modelDBContent;
         $this->dbColumnName     = $dbColumnName;
-        $this->collection       = $collection;
-        $this->disk             = $disk;
+     
     }
 
-    public function checkForCkEditorImages()
+    public function checkForCkEditorImages($model, string $collection, string $disk)
     {
 
         $dom = new DOMDocument();
@@ -34,21 +33,37 @@ class CheckCkEditorContent
         foreach ($images as $image) {
             $tempSrc = $image->getAttribute('src');
 
-           
+
             if (strpos($tempSrc, '/temp/') !== false) {
                 $path = str_replace(url('/storage'), storage_path('app/public'), $tempSrc);
-                $mediaItem = $this->model->addMedia($path)->toMediaCollection($this->collection,$this->disk);
+                $mediaItem = $model->addMedia($path)->toMediaCollection($collection, $disk);
                 $newSrc = $mediaItem->getUrl();
                 $image->setAttribute('src', $newSrc);
-                }
+            }
         }
 
-        
+
         $newHtml = $dom->saveHTML();
 
-        
-        $this->model->update([
+
+        $model->update([
             $this->dbColumnName => $newHtml
+        ]);
+    }
+
+    public function checkForYoutubeLinks()
+    {
+        $html = $this->modelDBContent; // Angenommen, dies ist der ursprüngliche HTML-Inhalt aus deiner Datenbank
+
+        $replace1 = str_replace('https://www.youtube.com/watch?v=','https://www.youtube-nocookie.com/embed/',$html);
+        $replace2 = explode('&', $replace1, 2)[0];
+        $neuesHtml = $replace2;
+        // Ersetze die YouTube-Links
+       
+
+        // Aktualisiere den Eintrag in der Datenbank mit dem neuen HTML-Inhalt
+        $this->model->update([
+            $this->dbColumnName => $neuesHtml
         ]);
     }
 }

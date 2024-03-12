@@ -248,6 +248,7 @@ class MakeResourceCommand extends Command
             '{{ pluginStrToLower }}' => $this->convertPluginToSingularStrtolower(),
             '{{ pluralStrtolowerSnake }}' => $this->convertArgumentToPluralStrtolowerSnake(),
             '{{ pluginKebab }}'           => $this->convertPluginToSingularStrtolower(),
+            '{{ modelKebab }}'            => $this->convertModelToSingularStrtolower(),
             '{{ vendorKebab }}'           => $this->convertVendorToSingularStrtolower(),
             '{{ thumbVendor }}'           => $this->splitCamelCase($this->argument('vendor')),
             '{{ thumbPlugin }}'           => $this->splitCamelCase($this->argument('plugin')),
@@ -325,6 +326,13 @@ class MakeResourceCommand extends Command
         //{{ plugin-name }}
         $plugin = $this->kebab($this->argument('plugin'));
         return $plugin;
+    }
+
+    private function convertModelToSingularStrtolower()
+    {
+        //{{ model-name }}
+        $model = $this->kebab($this->argument('model'));
+        return $model;
     }
 
     private function convertVendorToSingularStrtolower()

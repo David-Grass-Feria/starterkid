@@ -1,4 +1,4 @@
-<div class="divide-y divide-gray-200 overflow-hidden bg-white rounded-md xl:max-w-7xl xl:mx-auto shadow-xl">
+<div class="divide-y divide-gray-200 overflow-hidden bg-white rounded-md xl:max-w-7xl xl:mx-auto shadow-sm">
     @if(isset($header))
     <div class="px-4 py-5 sm:px-6 flex items-center space-x-3 bg-white">
       {{$header}}

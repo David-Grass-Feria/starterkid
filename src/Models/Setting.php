@@ -18,7 +18,12 @@ class Setting extends Model implements HasMedia
         'secondary_color',
         'font_color',
         'font_family',
-        'font_color_on_dark_background'
+        'font_color_on_dark_background',
+        'extra'
+    ];
+
+    protected $casts = [
+        'extra' => 'json',
     ];
 
     protected function fontFamily(): Attribute

@@ -4,19 +4,7 @@
         <link rel="stylesheet"
             href="{{ asset('vendor/ckeditor5/ckeditor5/content-styles.css') }}"
             type="text/css">
-        <style>
-            .ck-editor__editable {
-                min-height: 200px;
-                max-height: 500px;
-                overflow: scroll;
-
-
-            }
-
-            .ck.ck-editor__editable_inline {
-                padding-left: 1em;
-            }
-        </style>
+        
     @endpush
     
     @section('scripts')
@@ -33,6 +21,15 @@
             const editorElement = document.getElementById('{{ $for }}');
             if (editorElement && !window.ckEditors['{{ $for }}']) {
                 ClassicEditor.create(editorElement, {
+                    heading: {
+            options: [
+                { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                { model: 'heading2', view: 'h2', title: 'Überschrift 2', class: 'ck-heading_heading2' },
+                { model: 'heading3', view: 'h3', title: 'Überschrift 3', class: 'ck-heading_heading3' }
+            ]
+        },
+                    
+                    
                     removePlugins: [{{$removePlugins ?? ''}}] // Plugins, die deaktiviert werden sollen
                 })
                     .then(editor => {

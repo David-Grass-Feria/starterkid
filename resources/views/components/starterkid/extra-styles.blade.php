@@ -55,4 +55,8 @@
   body a {
     color: var(--settingPrimaryColor);
   }
+
+  body h1 {
+    font-size:32px;
+  }
 </style>

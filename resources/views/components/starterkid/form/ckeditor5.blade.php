@@ -1,9 +1,39 @@
 <div x-data>
     
     @push('styles')
-        <link rel="stylesheet"
-            href="{{ asset('vendor/ckeditor5/ckeditor5/content-styles.css') }}"
-            type="text/css">
+       
+
+            <style>
+.ck-content a {
+    font-size:1.3em;
+    font-weight: normal;
+    color: {{$settingPrimaryColor}} 
+  
+  }
+
+  .ck-content h2 {
+    font-size:2.3em;
+    font-weight: normal;
+    
+  
+  }
+
+  .ck-content pre {
+    background-color:#1f2937 !important;
+   
+  }
+
+  .ck-content code {
+    color: white !important;
+  }
+
+  .ck-content h3 {
+    font-size:2em;
+    font-weight: normal;
+    
+  
+  }
+            </style>
 
     @endpush
     
@@ -102,6 +132,11 @@
     }
 
     </script>
+
+
+
+
+
     @endsection
     
 
@@ -125,6 +160,40 @@
                 { model: 'heading3', view: 'h3', title: 'Überschrift 3', class: 'ck-heading_heading3' }
             ]
         },
+
+        highlight: {
+            options: [
+                {
+                    model: 'yellowMarker',
+                    class: 'marker-yellow',
+                    title: 'Gelb Marker',
+                    color: 'var(--ck-highlight-marker-yellow)',
+                    type: 'marker'
+                }
+                
+            ]
+        },
+        link: {
+            
+            decorators: [
+                {
+                    mode: 'manual',
+                    label: 'NoFollow',
+                    attributes: {
+                        rel: 'nofollow'
+                    }
+                },
+                {
+                    mode: 'manual',
+                    label: 'OpenInNewWindow',
+                    attributes: {
+                        target: '_blank'
+                    }
+                }
+            ]
+        },
+
+       
                     
                     extraPlugins: [ SimpleUploadAdapterPlugin ],
                     removePlugins: [{{$removePlugins ?? ''}}] // Plugins, die deaktiviert werden sollen

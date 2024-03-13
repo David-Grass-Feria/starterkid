@@ -39,6 +39,14 @@
       color: var(--settingFontColorOnDarkBackground);
   }
 
+  .settingPrimaryBorderColor{
+    border: solid 1px var(--settingPrimaryColor);
+  }
+
+  .settingSecondaryBorderColor{
+    border: solid 1px var(--settingSecondaryColor);
+  }
+
 
   input[type='checkbox'] {
 

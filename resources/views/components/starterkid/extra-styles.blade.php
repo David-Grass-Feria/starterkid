@@ -37,6 +37,7 @@
 
   .settingFontColorOnDarkBackground {
       color: var(--settingFontColorOnDarkBackground);
+      
   }
 
   .settingPrimaryBorderColor{
@@ -88,20 +89,20 @@
   }
 
   .prose p {
-    color: #111827;
+    color: var(--settingFontColor);
     font-size: 1.2rem;
     margin-top: -0.2em; /* Kleinere obere Abstände */
     margin-bottom: -0.2em; /* Kleinere untere Abstände */
   }
 
   .prose h2 {
-    color: #111827;
+    color: var(--settingFontColor);
     margin-top: -0.2em; /* Kleinere obere Abstände */
     margin-bottom: -0.2em; /* Kleinere untere Abstände */
   }
 
   .prose h3 {
-    color: #111827;
+    color: var(--settingFontColor);
     margin-top: -0.2em; /* Kleinere obere Abstände */
     margin-bottom: -0.2em; /* Kleinere untere Abstände */
   }

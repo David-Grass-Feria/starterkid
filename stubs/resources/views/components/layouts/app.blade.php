@@ -23,8 +23,11 @@
 </head>
 
 <body class="h-full w-full bg-gray-200">
-   
-   
+    @if(isset($settingBannerMessage))
+    @if($settingBannerMessage !== '')
+    <x-starterkid::starterkid.banner-message />
+    @endif
+    @endif
     <div x-data="{ open: false, notificationWindowOpen: false }" x-cloak>
         <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
         <div x-show="open" class="relative z-50 lg:hidden" role="dialog" aria-modal="true">

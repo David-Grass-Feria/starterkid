@@ -6,10 +6,10 @@ return [
     'search_on_dashboard'                       => env('SEARCH_ON_DASHBOARD', false),
     'enable_notifications'                      => env('ENABLE_NOTIFICATIONS', false),
     'temp_folder'                               => env('TEMP_FOLDER', 'temp'),
-    'primary_color'                             => env('PRIMARY_COLOR', '#d50c2d'),
-    'secondary_color'                           => env('SECONDARY_COLOR', '#383838'),
-    'font_color'                                => env('FONT_COLOR', '#5C5C5C'),
-    'font_color_on_dark_background'             => env('FONT_COLOR_ON_DARK_BACKGROUND', '#c2c7d0'),
+    'primary_color'                             => env('PRIMARY_COLOR', '#F9322C'),
+    'secondary_color'                           => env('SECONDARY_COLOR', '#ffffff'),
+    'font_color'                                => env('FONT_COLOR', '#2e2e2e'),
+    'font_color_on_dark_background'             => env('FONT_COLOR_ON_DARK_BACKGROUND', '#ffffff'),
     'font_familiy'                              => env('FONT_FAMILIY', 'Open Sans'),
     'time_format'                               => [
 

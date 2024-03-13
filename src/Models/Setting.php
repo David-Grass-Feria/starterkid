@@ -19,7 +19,8 @@ class Setting extends Model implements HasMedia
         'font_color',
         'font_family',
         'font_color_on_dark_background',
-        'extra'
+        'extra',
+        'banner_message',
     ];
 
     protected $casts = [

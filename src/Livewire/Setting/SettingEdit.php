@@ -22,6 +22,7 @@ class SettingEdit extends Component
     public $font_family;
     public $public_logos = [];
     public $public_favicons = [];
+    public $banner_message;
 
 
 
@@ -36,6 +37,7 @@ class SettingEdit extends Component
         $this->font_color                                = $this->setting->font_color;
         $this->font_color_on_dark_background             = $this->setting->font_color_on_dark_background;
         $this->font_family                               = $this->setting->font_family;
+        $this->banner_message                            = $this->setting->banner_message;
     }
 
     public function resetSettings()
@@ -104,6 +106,7 @@ class SettingEdit extends Component
             'font_color'                            => 'required|string|max:7',
             'font_family'                           => 'required|string|max:255',
             'font_color_on_dark_background'         => 'required|string|max:7',
+            'banner_message'                        => 'nullable|string|max:255',
 
         ]);
         $this->setting->update($validated);
@@ -125,9 +128,7 @@ class SettingEdit extends Component
         }
 
 
-
-        Cache::forget('favicon');
-        Cache::forget('logo');
+        Artisan::call('cache:clear');
         return redirect()->route('settings.edit', 1)->with('success', __('Setting updated'));
     }
     public function render()

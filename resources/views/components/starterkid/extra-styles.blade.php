@@ -31,6 +31,10 @@
       color: var(--settingFontColor);
   }
 
+  .settingPrimaryFontColor {
+      color: var(--settingPrimaryColor);
+  }
+
   .settingFontColor::placeholder {
       color: var(--settingFontColor);
   }

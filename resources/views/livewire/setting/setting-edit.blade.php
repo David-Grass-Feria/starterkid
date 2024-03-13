@@ -39,6 +39,15 @@
             </x-slot>
             </x-starterkid::starterkid.form.file>
             
+            <x-starterkid::starterkid.form.ckeditor5 wire:model="banner_message" for="banner_message" id="banner_message" rows="5" label="{{__('Banner message')}}">
+            <x-slot name="removePlugins">
+            'CodeBlock','List','Highlight','HorizontalLine','BlockQuote','Table','Italic','Heading','Image','ImageUpload','MediaEmbed','SimpleUploadAdapterPlugin'
+            </x-slot>
+            <x-slot name="description">
+                {{__('This message is displayed on the entire website.')}}
+            </x-slot>
+            {!!$banner_message!!}
+            </x-starterkid::starterkid.form.ckeditor5>
             
             <div class="mt-5">
             <x-starterkid::starterkid.button-secondary type="button" wire:click="resetSettings">{{__('Reset settings')}}</x-starterkid::starterkid.button-secondary>

@@ -1,0 +1,42 @@
+.ck.ck-editor__main>.ck-editor__editable:not(.ck-focused) {
+background-color:#ffffff;
+}
+
+.ck.ck-editor__editable_inline h2 {
+font-size:1.4em;
+font-weight: bold;
+}
+
+
+
+.ck-content p {
+    font-size:0.9em;
+    font-weight: normal;
+  
+  }
+
+  .ck-content a {
+    color:blue;
+  
+  }
+
+
+
+  .ck.ck-editor__editable pre {
+    background-color:#1f2937;
+    color: #ffffff;
+  }
+
+
+
+
+.ck.ck-editor__main>.ck-editor__editable {
+    background: var(--ck-color-base-background);
+    border-radius: 0;
+     min-height: 100px;
+     
+
+}
+
+
+

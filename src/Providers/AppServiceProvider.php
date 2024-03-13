@@ -59,6 +59,7 @@ class AppServiceProvider extends ServiceProvider
                     View::share('settingFontColor', $setting->font_color);
                     View::share('settingFontColorOnDarkBackground', $setting->font_color_on_dark_background);
                     View::share('settingFontFamily', $setting->font_family);
+                    View::share('settingBannerMessage', $setting->banner_message);
     
                     // Logo und Favicon Logik
                     if ($setting->hasMedia('logo')) {

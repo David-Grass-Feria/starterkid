@@ -3,37 +3,9 @@
     @push('styles')
        
 
-            <style>
-.ck-content a {
-    font-size:1.3em;
-    font-weight: normal;
-    color: {{$settingPrimaryColor}} 
-  
-  }
-
-  .ck-content h2 {
-    font-size:2.3em;
-    font-weight: normal;
-    
-  
-  }
-
-  .ck-content pre {
-    background-color:#1f2937 !important;
-   
-  }
-
-  .ck-content code {
-    color: white !important;
-  }
-
-  .ck-content h3 {
-    font-size:2em;
-    font-weight: normal;
-    
-  
-  }
-            </style>
+          
+ <link href="{{ asset('vendor/ckeditor5/ckeditor5/content-styles.css') }}" rel="stylesheet" />
+         
 
     @endpush
     
@@ -157,7 +129,7 @@
             options: [
                 { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
                 { model: 'heading2', view: 'h2', title: 'Überschrift 2', class: 'ck-heading_heading2' },
-                { model: 'heading3', view: 'h3', title: 'Überschrift 3', class: 'ck-heading_heading3' }
+               
             ]
         },
 

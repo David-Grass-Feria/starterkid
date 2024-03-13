@@ -16,7 +16,7 @@
             <x-starterkid::starterkid.form.color wire:model="primary_color" for="primary_color" id="primary_color" label="{{__('Primary color')}}" required/>
             <x-starterkid::starterkid.form.color wire:model="secondary_color" for="secondary_color" id="secondary_color" label="{{__('Secondary color')}}" required/>
             <x-starterkid::starterkid.form.color wire:model="font_color" for="font_color" id="font_color" label="{{__('Font color')}}" required/>
-            <x-starterkid::starterkid.form.color wire:model="font_color_on_dark_background" for="font_color_on_dark_background" id="font_color_on_dark_background" label="{{__('Font color dark background')}}" required/>
+            <x-starterkid::starterkid.form.color wire:model="font_color_on_dark_background" for="font_color_on_dark_background" id="font_color_on_dark_background" label="{{__('Font color background')}}" required/>
             <x-starterkid::starterkid.form.text wire:model="font_family" for="font_family" id="font_family" label="{{__('Font family')}}" required>
             <x-slot name="description">
             {{__('Go to fontbunny website and search your font name')}} <a target="_blank" title="Font Bunny Website" href="https://fonts.bunny.net/">https://fonts.bunny.net/</a>

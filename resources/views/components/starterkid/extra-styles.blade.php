@@ -52,26 +52,74 @@
 
   }
 
+  
 
-
-  .content a {
+  
+  .prose a {
     color: var(--settingPrimaryColor);
     text-decoration: underline;
   }
 
-  .content p {
-    font-size:1.2rem;
-    font-weight: normal;
-    color: #1C1C1C;
+ 
+
+  .prose figure {
+    
+    margin-top: -0.2em; /* Kleinere obere Abstände */
+    margin-bottom: -0.2em; /* Kleinere untere Abstände */
+ 
   }
-  .content h1 {
-    font-size:2.2rem;
-    font-weight: bold;
+
+  .prose table.ball {
+    width: 100px !important;
+}
+
+  .prose pre {
+    
+    margin-top: -0.2em; /* Kleinere obere Abstände */
+    margin-bottom: -0.2em; /* Kleinere untere Abstände */
+  }
+
+  .prose p {
     color: #111827;
+    font-size: 1.2rem;
+    margin-top: -0.2em; /* Kleinere obere Abstände */
+    margin-bottom: -0.2em; /* Kleinere untere Abstände */
   }
-  .content h2 {
-    font-size:1.4rem;
-    font-weight: bold;
+
+  .prose h2 {
     color: #111827;
+    margin-top: -0.2em; /* Kleinere obere Abstände */
+    margin-bottom: -0.2em; /* Kleinere untere Abstände */
   }
+
+  .prose h3 {
+    color: #111827;
+    margin-top: -0.2em; /* Kleinere obere Abstände */
+    margin-bottom: -0.2em; /* Kleinere untere Abstände */
+  }
+
+ .prose td {
+  border: 1px solid gray;
+}
+
+.prose hr {
+  border: 1px solid gray;
+}
+
+
+
+.ball {
+    width: 100px;
+}
+
+
+
+  
+
+
+
+
+
+
+
 </style>

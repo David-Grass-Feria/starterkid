@@ -8,16 +8,18 @@
     <meta name="robots" content="noindex, follow">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
- 
+   
     <x-starterkid::starterkid.font />
     <x-starterkid::starterkid.favicon />
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     
+
     <!-- Styles -->
     <x-starterkid::starterkid.extra-styles />
     @stack('styles')
     @livewireStyles
+
 </head>
 
 <body class="h-full w-full bg-gray-200">

@@ -1,0 +1,26 @@
+.ck.ck-editor__editable_inline h2 {
+font-size:2em;
+font-weight: bold;
+}
+
+.ck.ck-editor__editable_inline h3 {
+font-size:1.6em;
+font-weight: bold;
+}
+
+.ck-content p {
+    font-size:1.3em;
+    font-weight: normal;
+  
+  }
+
+
+.ck.ck-editor__main>.ck-editor__editable {
+    background: var(--ck-color-base-background);
+    border-radius: 0;
+     min-height: 200px;
+ max-height: 500px;
+}
+
+
+

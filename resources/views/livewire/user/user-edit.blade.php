@@ -15,6 +15,9 @@
             @endforeach
             </x-starterkid::starterkid.form.select>
             <x-starterkid::starterkid.form.ckeditor5 wire:model="bio" for="bio" id="bio" rows="5" label="{{__('Bio')}}">
+                <x-slot name="removePlugins">
+                    'CodeBlock','List','Highlight','HorizontalLine','BlockQuote','Table','Italic','Heading','Image','ImageUpload','MediaEmbed','SimpleUploadAdapterPlugin'
+                   </x-slot>
             @if(isset($bio))
             {!! $bio !!}
             @endif

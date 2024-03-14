@@ -25,14 +25,17 @@ class UserEdit extends Component
     public function mount($recordId = null)
     {
         
-        
-       
+            
             $this->authorize('update',\App\Models\User::class);   
             $this->user         = \App\Models\User::find($recordId);
             $this->name         = $this->user->name;
             $this->email        = $this->user->email;
             $this->bio          = $this->user->bio;
             $this->role         = $this->user->role;
+
+            if($this->user->role === config('starterkid.global_admin')){
+                abort(403,__('You can not edit a'). config('starterkid.global_admin'));
+            }
             
        
 

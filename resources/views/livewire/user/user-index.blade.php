@@ -59,11 +59,7 @@
             
             @can('update',\App\Models\User::class)
             
-            @if(auth()->user()->role == config('starterkid.global_admin'))
-            <a href="{{route('users.edit',$user->id)}}" title="{{__('Edit')}}">
-                <x-starterkid::starterkid.button-primary type="button">{{__('Edit')}}</x-starterkid::starterkid.button-primary>
-            </a>
-            @else
+           
             
             
             @if($user->role !== config('starterkid.global_admin'))
@@ -71,7 +67,7 @@
                 <x-starterkid::starterkid.button-primary type="button">{{__('Edit')}}</x-starterkid::starterkid.button-primary>
             </a>
             @endif
-            @endif
+          
             @endcan
         </x-starterkid::starterkid.td>
          </x-starterkid::starterkid.tr>

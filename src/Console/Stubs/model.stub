@@ -9,6 +9,7 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class {{ singularUcfirst }} extends Model implements HasMedia
 {
@@ -58,5 +59,13 @@ class {{ singularUcfirst }} extends Model implements HasMedia
     //        get: fn (string $value) => ucfirst($value),
     //        set: fn (string $value) => ucfirst($value),
     //    );
+    //}
+
+    //public function registerMediaConversions(?Media $media = null): void
+    //{
+    //    $this->addMediaConversion('thumb')
+    //          ->width(368)
+    //          ->height(232)
+    //          ->sharpen(10);
     //}
 }

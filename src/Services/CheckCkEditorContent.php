@@ -45,7 +45,6 @@ class CheckCkEditorContent
 
         $newHtml = $dom->saveHTML();
 
-
         $model->update([
             $this->dbColumnName => $newHtml
         ]);

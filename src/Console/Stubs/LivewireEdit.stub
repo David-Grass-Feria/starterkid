@@ -63,7 +63,7 @@ class {{ singularUcfirst }}Edit extends Component
         //(new \GrassFeria\Starterkid\Services\SpatieMediaLibary\SaveMediaService($this->public_photos, $this->{{ singularStrtolower }}, 'photos', 'public'));
         //}
         
-        //(new \GrassFeria\Starterkid\Services\CheckCkEditorContent($this->{{ singularStrtolower }}->body,'body'))->checkForCkEditorImages($this->{{ singularStrtolower }},'images','public');
+        //(new \GrassFeria\Starterkid\Services\CheckCkEditorContent($this->{{ singularStrtolower }}->body,'body'))->checkForCkEditorImages($this->{{ singularStrtolower }},'images','ckimage');
         return redirect()->route('{{ pluralStrtolower }}.index')->with('success', __('{{ singularUcfirst }} updated'));
 
     }

@@ -16,7 +16,6 @@ class SettingEdit extends Component
 
     public $setting;
     public $primary_color;
-    public $secondary_color;
     public $font_color;
     public $font_color_on_dark_background;
     public $font_family;
@@ -33,7 +32,6 @@ class SettingEdit extends Component
         $this->authorize('update', \GrassFeria\Starterkid\Models\Setting::class);
         $this->setting                                  = \GrassFeria\Starterkid\Models\Setting::find(1);
         $this->primary_color                             = $this->setting->primary_color;
-        $this->secondary_color                           = $this->setting->secondary_color;
         $this->font_color                                = $this->setting->font_color;
         $this->font_color_on_dark_background             = $this->setting->font_color_on_dark_background;
         $this->font_family                               = $this->setting->font_family;
@@ -102,7 +100,6 @@ class SettingEdit extends Component
         $this->authorize('update', \GrassFeria\Starterkid\Models\Setting::class);
         $validated = $this->validate([
             'primary_color'                         => 'required|string|max:7',
-            'secondary_color'                       => 'required|string|max:7',
             'font_color'                            => 'required|string|max:7',
             'font_family'                           => 'required|string|max:255',
             'font_color_on_dark_background'         => 'required|string|max:7',

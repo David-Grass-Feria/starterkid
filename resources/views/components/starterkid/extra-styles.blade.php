@@ -48,6 +48,10 @@
     border: solid 1px var(--settingPrimaryColor);
   }
 
+  .settingPrimaryBorderColorLeft{
+    border-left: solid 2px var(--settingPrimaryColor);
+  }
+
   .settingSecondaryBorderColor{
     border: solid 1px var(--settingSecondaryColor);
   }

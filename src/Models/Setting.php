@@ -15,7 +15,6 @@ class Setting extends Model implements HasMedia
 
     protected $fillable = [
         'primary_color',
-        'secondary_color',
         'font_color',
         'font_family',
         'font_color_on_dark_background',

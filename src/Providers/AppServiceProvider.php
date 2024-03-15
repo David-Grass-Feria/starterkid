@@ -4,11 +4,11 @@ namespace GrassFeria\Starterkid\Providers;
 
 use Livewire\Livewire;
 use Illuminate\Support\Facades\View;
-use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\ServiceProvider;
+
 use App\Providers\PluginServiceProvider;
 use GrassFeria\Starterkid\Console\Commands\WebInstallCommand;
 use GrassFeria\Starterkid\Console\Commands\MakeResourceCommand;
@@ -28,9 +28,16 @@ class AppServiceProvider extends ServiceProvider
         $this->app->register(AuthServiceProvider::class);
         $this->app->register(NavlinkServiceProvider::class);
         
+        
         if (class_exists(PluginServiceProvider::class)) {
             $this->app->register(PluginServiceProvider::class);
+                
         }
+
+        $this->mergeConfigFrom(
+            __DIR__.'/../../config/starterkid.php', 'starterkid'
+        );
+        
         
         
         
@@ -42,9 +49,9 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(Kernel $kernel)
+    public function boot()
     {
-        //$kernel->prependMiddlewareToGroup('web', \GrassFeria\Starterkid\Http\Middleware\GetLocaleAdmin::class);
+        
         
         
        
@@ -85,6 +92,7 @@ class AppServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../../resources/views', 'starterkid');
         $this->loadJsonTranslationsFrom(__DIR__.'/../../lang');
         
+        Livewire::component('starterkid::dashboard',\GrassFeria\Starterkid\Livewire\Dashboard::class);
         Livewire::component('starterkid::show-image', \GrassFeria\Starterkid\Livewire\ShowImage::class);
         Livewire::component('starterkid::show-audio', \GrassFeria\Starterkid\Livewire\ShowAudio::class);
         Livewire::component('starterkid::show-file', \GrassFeria\Starterkid\Livewire\ShowFile::class);

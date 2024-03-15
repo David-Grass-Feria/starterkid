@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Session;
+use GrassFeria\Starterkid\Livewire\Dashboard;
 use GrassFeria\Starterkid\Livewire\User\UserEdit;
 use GrassFeria\Starterkid\Livewire\User\UserIndex;
 use GrassFeria\Starterkid\Livewire\User\UserCreate;
@@ -29,6 +30,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
+    Route::get('/dashboard',Dashboard::class)->name('dashboard');
     Route::get('/stream/files/{media}/{recordId}', [StreamController::class,'stream'])->name('stream.files');
     Route::post('dashboard/ckeditor5/image-upload', [Ckeditor5ImageUploadController::class,'store'])->name('ckeditor5.images.store');
     Route::get('/files/{media}/{recordId}', [StreamController::class,'stream'])->name('stream.files');

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace GrassFeria\Starterkid\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;

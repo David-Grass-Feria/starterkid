@@ -25,7 +25,7 @@ class NavlinkServiceProvider extends ServiceProvider
        
 
         // Pfad zu den Package Configs anpassen
-        $configPaths = glob(base_path('config/starterkid/*/*/navlink.php'));
+        $configPaths = glob(base_path('plugins/*/*/config/navlink.php'));
         //dd($configPaths);
         
         

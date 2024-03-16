@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Facades\Session;
 use GrassFeria\Starterkid\Livewire\Dashboard;
 use GrassFeria\Starterkid\Livewire\User\UserEdit;
 use GrassFeria\Starterkid\Livewire\User\UserIndex;
@@ -40,10 +38,7 @@ Route::middleware([
     Route::get('/dashboard/users/create',UserCreate::class)->name('users.create');
     Route::get('/dashboard/users/edit/{recordId}',UserEdit::class)->name('users.edit');
     
-    Route::get('change-locale/{locale}', function ($locale) {
-        Session::put('locale', $locale);
-        return back();
-    })->name('change.locale');
+    
 
     
    

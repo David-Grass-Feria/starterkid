@@ -72,6 +72,7 @@ class MakeResourceCommand extends Command
         $this->createFactoryFile();
         $this->createCommandFile();
         $this->createComposerJsonFile();
+        $this->createLogoFile();
     }
 
     private function createAppServiceProviderFile()
@@ -220,6 +221,13 @@ class MakeResourceCommand extends Command
     {
         $templatePath = $this->getStubsPath().'/composer-json.stub';
         $destinationPath = $this->getDestinationPath('/composer.json');
+        $this->generateFile($templatePath,$destinationPath);
+    }
+
+    private function createLogoFile()
+    {
+        $templatePath = $this->getStubsPath().'/logo.png';
+        $destinationPath = $this->getDestinationPath('/stubs/public/'.$this->convertPluginToSingularStrtolower().'.png');
         $this->generateFile($templatePath,$destinationPath);
     }
 
@@ -493,7 +501,7 @@ class MakeResourceCommand extends Command
 
     private function createStubsFolder()
     {
-        $destinationPath = $this->getDestinationPath('/src/stubs');
+        $destinationPath = $this->getDestinationPath('/stubs/public');
         if (!File::isDirectory($destinationPath)) {
             File::makeDirectory($destinationPath, 0755, true, false);
         }

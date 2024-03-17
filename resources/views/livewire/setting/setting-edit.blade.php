@@ -4,6 +4,13 @@
             <a href="{{route('dashboard')}}" title="{{__('Dashboard')}}">
             <x-starterkid::starterkid.button-secondary type="button">{{__('Back')}}</x-starterkid::starterkid.button-secondary>
             </a>
+
+            @can('viewAny',\App\Models\User::class)
+            <a href="{{route('users.index')}}" title="{{__('Users')}}">
+                <x-starterkid::starterkid.button-secondary type="button">{{__('Users')}}</x-starterkid::starterkid.button-secondary>
+                </a>
+                @endcan
+
             <a href="{{route('settings.plugin')}}" title="{{__('Plugins')}}">
                 <x-starterkid::starterkid.button-secondary type="button">{{__('Plugins')}}</x-starterkid::starterkid.button-secondary>
                 </a>
@@ -11,6 +18,13 @@
             <a target="_blank" href="{{route('horizon.index')}}" title="{{__('Go to Laravel Horizon')}}">
                 <x-starterkid::starterkid.button-secondary type="button">{{__('Go to Laravel Horizon')}}</x-starterkid::starterkid.button-secondary>
                 </a>
+
+                @if(Route::has('organization.edit'))
+                <a target="_blank" href="{{route('organization.edit')}}" title="{{__('Organization')}}">
+                    <x-starterkid::starterkid.button-secondary type="button">{{__('Organization')}}</x-starterkid::starterkid.button-secondary>
+                    </a>
+                    @endif
+
             </x-slot>
             <x-starterkid::starterkid.form cancelRoute="{{route('dashboard')}}">
             <x-starterkid::starterkid.form.color wire:model="primary_color" for="primary_color" id="primary_color" label="{{__('Primary color')}}" required/>

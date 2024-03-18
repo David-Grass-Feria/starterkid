@@ -37,7 +37,6 @@ class SaveMediaWithFilenameJob implements ShouldQueue
             $mediaName = explode('?', basename($media))[0];
             $livewireTmpFilePath = base_path('storage'.'/'.'app'.'/'.'livewire-tmp'.'/'.$mediaName);
             $fileExtension = pathinfo($mediaName, PATHINFO_EXTENSION);
-            dd($fileExtension);
             $newFilename = Str::slug($this->filename);
             $this->record->addMedia($livewireTmpFilePath)->usingFileName($newFilename.'.'.$fileExtension)->toMediaCollection($this->collection,$this->disk);
         }

@@ -28,7 +28,10 @@ class DeleteMediaCollection implements ShouldQueue
     {
         $mediaItems = $this->record->getMedia($this->collection);
             foreach($mediaItems as $mediaItem){
-                $mediaItem->delete;
+                if(isset($mediaItem)){
+                    $mediaItem->delete();
+                }
+                
             }
     }
 }

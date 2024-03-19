@@ -50,7 +50,9 @@
     "User updated":                                                                                     "Benutzer aktualisiert",
     "Choose your role":                                                                                 "Wähle eine Rolle",
     "Banner message":                                                                                   "Banner Nachricht",
-    "This message is displayed on the entire website.":                                                 "Diese Nachricht wird auf der kompletten Webseite angezeigt."
+    "This message is displayed on the entire website.":                                                 "Diese Nachricht wird auf der kompletten Webseite angezeigt.",
+    "pagination.next":                                                                                  "Vor »",
+    "pagination.previous":                                                                              "« Zurück"
     
 
 

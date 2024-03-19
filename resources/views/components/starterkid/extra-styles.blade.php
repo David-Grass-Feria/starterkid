@@ -7,11 +7,19 @@
       font-family: '{{$settingFontFamily ?? config('starterkid.font_familiy')}}', sans-serif;
   }
 
-  
+  .bodyColor {
+    background-color:#f0efec;
+  }
 
   .settingPrimaryBackgroundColor {
       background-color: var(--settingPrimaryColor);
   }
+
+  .settingPrimaryBackgroundColorHover :hover {
+      background-color: var(--settingPrimaryColor);
+  }
+
+
 
   .settingPrimaryColor {
       color: var(--settingPrimaryColor);

@@ -36,12 +36,12 @@ return [
 
         'medium'  => [
             'name' => 'medium',
-            'size' => 300,
+            'size' => 600,
         ],
 
         'large'   => [
             'name' => 'large',
-            'size' => 600,
+            'size' => 1000,
         ],
     ],
 

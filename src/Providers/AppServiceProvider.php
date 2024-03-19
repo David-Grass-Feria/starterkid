@@ -60,14 +60,7 @@ class AppServiceProvider extends ServiceProvider
             if (Schema::hasTable('settings')) {
                 $setting = \GrassFeria\Starterkid\Models\Setting::find(1);
                 if ($setting) {
-                    // Teile Einstellungen mit allen Ansichten
-                    View::share('settingPrimaryColor', $setting->primary_color);
-                    View::share('settingSecondaryColor', $setting->secondary_color);
-                    View::share('settingFontColor', $setting->font_color);
-                    View::share('settingFontColorOnDarkBackground', $setting->font_color_on_dark_background);
-                    View::share('settingFontFamily', $setting->font_family);
-                    View::share('settingBannerMessage', $setting->banner_message);
-    
+                   
                     // Logo und Favicon Logik
                     if ($setting->hasMedia('logo')) {
                         $logo = Cache::rememberForever('logo', function () use ($setting) {

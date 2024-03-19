@@ -15,10 +15,6 @@ class SettingEdit extends Component
     use WithFileUploads;
 
     public $setting;
-    public $primary_color;
-    public $font_color;
-    public $font_color_on_dark_background;
-    public $font_family;
     public $public_logos = [];
     public $public_favicons = [];
     public $banner_message;
@@ -31,10 +27,6 @@ class SettingEdit extends Component
 
         $this->authorize('update', \GrassFeria\Starterkid\Models\Setting::class);
         $this->setting                                  = \GrassFeria\Starterkid\Models\Setting::find(1);
-        $this->primary_color                             = $this->setting->primary_color;
-        $this->font_color                                = $this->setting->font_color;
-        $this->font_color_on_dark_background             = $this->setting->font_color_on_dark_background;
-        $this->font_family                               = $this->setting->font_family;
         $this->banner_message                            = $this->setting->banner_message;
     }
 
@@ -59,17 +51,7 @@ class SettingEdit extends Component
             }
         }
 
-        // reset database settings
-        $setting = \GrassFeria\Starterkid\Models\Setting::find(1);
-        $setting->update([
-            'primary_color'                         => config('starterkid.primary_color'),
-            'secondary_color'                       => config('starterkid.secondary_color'),
-            'font_color'                            => config('starterkid.font_color'),
-            'font_color_on_dark_background'         => config('starterkid.font_color_on_dark_background'),
-            'font_family'                           => config('starterkid.font_familiy'),
-        ]);
-
-
+       
         Cache::forget('favicon');
         Cache::forget('logo');
 
@@ -99,11 +81,7 @@ class SettingEdit extends Component
 
         $this->authorize('update', \GrassFeria\Starterkid\Models\Setting::class);
         $validated = $this->validate([
-            'primary_color'                         => 'required|string|max:7',
-            'font_color'                            => 'required|string|max:7',
-            'font_family'                           => 'required|string|max:255',
-            'font_color_on_dark_background'         => 'required|string|max:7',
-            'banner_message'                        => 'nullable|string|max:255',
+           'banner_message'                        => 'nullable|string|max:255',
 
         ]);
         $this->setting->update($validated);

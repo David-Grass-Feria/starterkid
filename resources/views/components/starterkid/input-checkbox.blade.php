@@ -1,1 +1,1 @@
-<input {{$attributes}} type="checkbox" class="h-4 w-4 border-gray-300 settingPrimaryColor focus:ring-0">
+<input {{$attributes}} type="checkbox" class="h-4 w-4 border-gray-300 text-primary focus:ring-0">

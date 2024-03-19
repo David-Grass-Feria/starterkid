@@ -14,23 +14,9 @@ class Setting extends Model implements HasMedia
     use InteractsWithMedia;
 
     protected $fillable = [
-        'primary_color',
-        'font_color',
-        'font_family',
-        'font_color_on_dark_background',
-        'extra',
         'banner_message',
     ];
 
-    protected $casts = [
-        'extra' => 'json',
-    ];
-
-    protected function fontFamily(): Attribute
-    {
-        return Attribute::make(
-            get: fn (string $value) => ucfirst($value),
-            set: fn (string $value) => ucfirst($value),
-        );
-    }
+    
+    
 }

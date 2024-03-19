@@ -1,1 +1,1 @@
-<span {{$attributes->merge(['class' => 'opacity-50 inline-flex items-center rounded-sm settingPrimaryBackgroundColor px-2 py-1 text-xs font-medium text-white'])}}>{{$slot}}</span>
+<span {{$attributes->merge(['class' => 'opacity-50 inline-flex items-center rounded-sm bg-primary px-2 py-1 text-xs font-medium text-white'])}}>{{$slot}}</span>

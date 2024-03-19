@@ -1,1 +1,1 @@
-<p class="text-xs settingFontColor">{{$slot}}</p>
+<p class="text-xs text-font_primary">{{$slot}}</p>

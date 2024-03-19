@@ -14,11 +14,7 @@ class SettingSeeder extends Seeder
     {
         \GrassFeria\Starterkid\Models\Setting::create([
             'id'                                        => 1,
-            'primary_color'                             => config('starterkid.primary_color'),
-            'secondary_color'                           => config('starterkid.secondary_color'),
-            'font_color'                                => config('starterkid.font_color'),
-            'font_color_on_dark_background'             => config('starterkid.font_color_on_dark_background'),
-            'font_family'                               => config('starterkid.font_familiy'),
+            
         ]);
     }
 }

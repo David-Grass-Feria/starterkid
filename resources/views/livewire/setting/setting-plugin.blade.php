@@ -7,7 +7,7 @@
             
            
             </x-slot>
-            <div class="bg-gray-200 p-5 settingFontColor">
+            <div class="bg-gray-200 p-5 text-font_primary">
             <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 
                 @foreach($plugins as $plugin)
@@ -22,7 +22,7 @@
                   <div class="flex flex-1 flex-col p-8">
                     <img class="mx-auto h-32 w-32 flex-shrink-0 rounded-sm" src="{{$plugin['composer_info']['extra']['logo-url'] ?? ''}}" alt="{{$plugin['composer_info']['extra']['logo-url'] ?? ''}}">
                     <h3 class="mt-2 text-xs font-semibold">{{$plugin['composer_info']['extra']['thumb-vendor'] ?? ''}}</h3>
-                    <a class="settingFontColor" target="_blank" href="{{$plugin['composer_info']['homepage'] ?? ''}}">
+                    <a class="text-font_primary" target="_blank" href="{{$plugin['composer_info']['homepage'] ?? ''}}">
                     <h3 class="mt-6 underline text-lg font-semibold">{{$plugin['composer_info']['extra']['thumb-name'] ?? ''}}</h3>
                     </a>
                     <dl class="mt-1 flex flex-grow flex-col justify-between">

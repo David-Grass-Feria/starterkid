@@ -10,7 +10,7 @@ return [
     'secondary_color'                           => env('SECONDARY_COLOR', '#ffffff'),
     'font_color'                                => env('FONT_COLOR', '#2e2e2e'),
     'font_color_on_dark_background'             => env('FONT_COLOR_ON_DARK_BACKGROUND', '#ffffff'),
-    'font_familiy'                              => env('FONT_FAMILIY', 'Open Sans'),
+    'font_familiy'                              => env('FONT_FAMILIY', 'Universal Sans'),
     'time_format'                               => [
 
         'time_format'                           => 'H:i',

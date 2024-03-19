@@ -69,7 +69,7 @@
                 <p class="text-sm mt-2">
                     {{ __('Your email address is unverified.') }}
 
-                    <button type="button" class="underline text-sm settingFontColor hover:settingFontColor rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" wire:click.prevent="sendEmailVerification">
+                    <button type="button" class="underline text-sm text-font_primary hover:text-font_primary rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" wire:click.prevent="sendEmailVerification">
                         {{ __('Click here to re-send the verification email.') }}
                     </button>
                 </p>

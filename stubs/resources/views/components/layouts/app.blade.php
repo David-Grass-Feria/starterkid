@@ -98,7 +98,7 @@
         <div class="lg:pl-72">
             <div
                 class="sticky top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
-                <button x-on:click="open = !open" type="button" class="-m-2.5 p-2.5 settingFontColor lg:hidden">
+                <button x-on:click="open = !open" type="button" class="-m-2.5 p-2.5 text-font_primary lg:hidden">
                     <span class="sr-only">Open sidebar</span>
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                         aria-hidden="true">
@@ -114,14 +114,14 @@
                     @if (config('starterkid.search_on_dashboard'))
                         <form class="relative flex flex-1">
                             <label for="search-field" class="sr-only">Search</label>
-                            <svg class="pointer-events-none absolute inset-y-0 left-0 h-full w-5 settingFontColor"
+                            <svg class="pointer-events-none absolute inset-y-0 left-0 h-full w-5 text-font_primary"
                                 viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                 <path fill-rule="evenodd"
                                     d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
                                     clip-rule="evenodd" />
                             </svg>
                             <input id="search-field"
-                                class="block h-full w-full border-0 py-0 pl-8 pr-0 settingFontColor placeholder:settingFontColor focus:ring-0 sm:text-sm"
+                                class="block h-full w-full border-0 py-0 pl-8 pr-0 text-font_primary placeholder:text-font_primary focus:ring-0 sm:text-sm"
                                 placeholder="Search..." type="search" name="search">
                         </form>
                     @else
@@ -161,7 +161,7 @@
                                     @else
                                         <span class="inline-flex rounded-md">
                                             <button type="button"
-                                                class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md settingFontColor bg-white hover:settingFontColor focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
+                                                class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-font_primary bg-white hover:text-font_primary focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
                                                 {{ Auth::user()->name }}
 
                                                 <svg class="ms-2 -me-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg"
@@ -177,7 +177,7 @@
 
                                 <x-slot name="content">
                                     <!-- Account Management -->
-                                    <div class="block px-4 py-2 text-xs settingFontColor">
+                                    <div class="block px-4 py-2 text-xs text-font_primary">
                                         {{ __('Manage Account') }}
                                     </div>
 
@@ -241,7 +241,7 @@
                                             <div class="ml-3 flex h-7 items-center">
                                                 <button x-on:click="notificationWindowOpen = !notificationWindowOpen"
                                                     type="button"
-                                                    class="relative rounded-md bg-white settingFontColor focus:outline-none focus:ring-2 settingPrimaryColorFocus focus:ring-offset-2">
+                                                    class="relative rounded-md bg-white text-font_primary focus:outline-none focus:ring-2 settingPrimaryColorFocus focus:ring-offset-2">
                                                     <span class="absolute -inset-2.5"></span>
                                                     <span class="sr-only">Close panel</span>
                                                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24"

@@ -19,22 +19,10 @@
                 <x-starterkid::starterkid.button-secondary type="button">{{__('Go to Laravel Horizon')}}</x-starterkid::starterkid.button-secondary>
                 </a>
 
-                @if(Route::has('organization.edit'))
-                <a target="_blank" href="{{route('organization.edit')}}" title="{{__('Organization')}}">
-                    <x-starterkid::starterkid.button-secondary type="button">{{__('Organization')}}</x-starterkid::starterkid.button-secondary>
-                    </a>
-                    @endif
-
+               
             </x-slot>
             <x-starterkid::starterkid.form cancelRoute="{{route('dashboard')}}">
-            <x-starterkid::starterkid.form.color wire:model="primary_color" for="primary_color" id="primary_color" label="{{__('Primary color')}}" required/>
-            <x-starterkid::starterkid.form.color wire:model="font_color" for="font_color" id="font_color" label="{{__('Font color')}}" required/>
-            <x-starterkid::starterkid.form.color wire:model="font_color_on_dark_background" for="font_color_on_dark_background" id="font_color_on_dark_background" label="{{__('Font color background')}}" required/>
-            <x-starterkid::starterkid.form.text wire:model="font_family" for="font_family" id="font_family" label="{{__('Font family')}}" required>
-            <x-slot name="description">
-            {{__('Go to fontbunny website and search your font name')}} <a target="_blank" title="Font Bunny Website" href="https://fonts.bunny.net/">https://fonts.bunny.net/</a>
-            </x-slot>
-            </x-starterkid::starterkid.form.text>
+           
             <x-starterkid::starterkid.form.file wire:model="public_logos" for="public_logos" id="public_logos" label="{{__('Logo')}}" maxFileSize="1MB" maxTotalFileSize="1MB">
             <x-slot name="acceptedFileTypes">
             'image/*'

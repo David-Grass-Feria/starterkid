@@ -20,7 +20,7 @@ export default {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
             colors: {
-                body: process.env.BODY_COLOR || '#f0efec',
+                body: process.env.BODY_COLOR || '#ffffff',
                 primary: process.env.PRIMARY_COLOR || '#F9322C',
                 secondary: process.env.SECONDARY_COLOR || '#ffffff',
                 font_primary: process.env.FONT_PRIMARY_COLOR || '#2e2e2e',

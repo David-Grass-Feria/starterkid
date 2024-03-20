@@ -1,5 +1,35 @@
 ## Only for a fresh Laravel with Jetstream installation
+# env
+```shell
+APP_NAME=Sharepusher
+APP_ENV=dev
+APP_KEY=base64:xwwqWFIgS8+64gEeo3UJT8v9d62CopTzrU2FzhPneUM=
+APP_DEBUG=true
+APP_URL=http://localhost:8000
+DEBUGBAR_ENABLED=true
 
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=sharepusher
+DB_USERNAME=root
+DB_PASSWORD=
+
+QUEUE_CONNECTION=sync
+REDIS_CLIENT=predis
+
+MAIL_MAILER=smtp
+MAIL_HOST=mail.your-server.de
+MAIL_PORT=465
+MAIL_USERNAME="admin@teamspusher.com"
+MAIL_PASSWORD="4WiH3RGeVC52GXHXPuJZ"
+MAIL_ENCRYPTION=ssl
+MAIL_FROM_ADDRESS="admin@teamspusher.com"
+MAIL_FROM_NAME="${APP_NAME}"
+
+MAX_FILE_SIZE_KB=300000 #300MB
+MAX_FILE_SIZE_MB=300 #300MB
+```
 # install predis
 ```shell
 composer require predis/predis

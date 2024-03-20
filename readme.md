@@ -71,9 +71,9 @@ composer update
 php artisan starterkid:install
 ```
 
-# register locale middleware in kernel web
+# dotenv for tailwind
 ```shell
-\App\Http\Middleware\GetLocaleAdmin::class,
+npm install dotenv --save-dev
 ```
 
 

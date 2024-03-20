@@ -1,3 +1,4 @@
+require('dotenv').config();
 import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
@@ -18,6 +19,13 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                body: process.env.BODY_COLOR || '#f0efec',
+                primary: process.env.PRIMARY_COLOR || '#F9322C',
+                secondary: process.env.SECONDARY_COLOR || '#ffffff',
+                font_primary: process.env.FONT_PRIMARY_COLOR || '#2e2e2e',
+                font_secondary: process.env.FONT_SECONDARY_COLOR || '#ffffff',
+              },
         },
     },
 

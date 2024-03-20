@@ -4,7 +4,7 @@
 
   
   .prose a {
-    color: var(--settingPrimaryColor);
+    color: var(--text-primary);
     text-decoration: underline;
   }
 

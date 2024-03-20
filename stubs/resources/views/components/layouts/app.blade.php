@@ -241,7 +241,7 @@
                                             <div class="ml-3 flex h-7 items-center">
                                                 <button x-on:click="notificationWindowOpen = !notificationWindowOpen"
                                                     type="button"
-                                                    class="relative rounded-md bg-white text-font_primary focus:outline-none focus:ring-2 settingPrimaryColorFocus focus:ring-offset-2">
+                                                    class="relative rounded-md bg-white text-font_primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
                                                     <span class="absolute -inset-2.5"></span>
                                                     <span class="sr-only">Close panel</span>
                                                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24"

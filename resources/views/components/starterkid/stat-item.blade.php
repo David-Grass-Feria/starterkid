@@ -1,7 +1,7 @@
 <div class="px-4 py-5 sm:p-6">
     <dt class="text-base font-normal text-gray-900">{{$description}}</dt>
     <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
-      <div class="flex items-baseline text-2xl font-semibold settingPrimaryColor">
+      <div class="flex items-baseline text-2xl font-semibold text-primary">
         {{$total}}
         @if(isset($from))
         <span class="ml-2 text-sm font-medium text-gray-500">from {{$from}}</span>

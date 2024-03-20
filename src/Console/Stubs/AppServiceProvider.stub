@@ -39,9 +39,9 @@ class AppServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../../resources/views', '{{ pluginStrToLower }}');
         $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
         $this->loadJsonTranslationsFrom(__DIR__.'/../../lang');
-        Livewire::component('{{ pluginKebab }}::{{ modelKebab }}',\{{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }}\{{ singularUcfirst }}Create::class);
-        Livewire::component('{{ pluginKebab }}::{{ modelKebab }}',\{{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }}\{{ singularUcfirst }}Edit::class);
-        Livewire::component('{{ pluginKebab }}::{{ modelKebab }}',\{{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }}\{{ singularUcfirst }}Index::class);
+        Livewire::component('{{ pluginKebab }}::{{ modelKebab }}-create',\{{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }}\{{ singularUcfirst }}Create::class);
+        Livewire::component('{{ pluginKebab }}::{{ modelKebab }}-edit',\{{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }}\{{ singularUcfirst }}Edit::class);
+        Livewire::component('{{ pluginKebab }}::{{ modelKebab }}-index',\{{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }}\{{ singularUcfirst }}Index::class);
 
        
         $this->publishes([

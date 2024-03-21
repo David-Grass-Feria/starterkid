@@ -4,7 +4,7 @@
 
   
   .prose a {
-    color: var(--text-primary);
+    
     text-decoration: underline;
   }
 
@@ -28,20 +28,20 @@
   }
 
   .prose p {
-    color: var(--text-font_primary);
+    
     font-size: 1.2rem;
     margin-top: -0.2em; /* Kleinere obere Abstände */
     margin-bottom: -0.2em; /* Kleinere untere Abstände */
   }
 
   .prose h2 {
-    color: var(--text-font_primary);
+    
     margin-top: -0.2em; /* Kleinere obere Abstände */
     margin-bottom: -0.2em; /* Kleinere untere Abstände */
   }
 
   .prose h3 {
-    color: var(--text-font_primary);
+   
     margin-top: -0.2em; /* Kleinere obere Abstände */
     margin-bottom: -0.2em; /* Kleinere untere Abstände */
   }

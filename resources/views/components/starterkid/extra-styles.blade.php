@@ -4,7 +4,7 @@
     content: "";
     display: block;
     height: 300px; /* Höhe der Navbar anpassen */
-    margin-top: -300px; /* Gleicher Wert, aber negativ */
+    margin-top: 300px; /* Gleicher Wert, aber negativ */
     visibility: hidden;
     pointer-events: none;
 }

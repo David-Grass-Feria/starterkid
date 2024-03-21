@@ -63,9 +63,41 @@ class {{ singularUcfirst }} extends Model implements HasMedia
 
     //public function registerMediaConversions(?Media $media = null): void
     //{
-    //    $this->addMediaConversion('thumb')
-    //          ->width(368)
-    //          ->height(232)
-    //          ->sharpen(10);
+    //      $this->addMediaConversion(config('starterkid.spatie_conversions.small.name'))
+    //          ->width(config('starterkid.spatie_conversions.small.size'));
+    //      $this->addMediaConversion(config('starterkid.spatie_conversions.large.name'))
+    //          ->width(config('starterkid.spatie_conversions.large.size'));
+    //      $this->addMediaConversion(config('starterkid.spatie_conversions.medium.name'))
+    //          ->width(config('starterkid.spatie_conversions.medium.size'));
+    //}
+
+    //public function scopeFrontGet{{ singularUcfirst }}WhereStatusIsOnline(\Illuminate\Database\Eloquent\Builder $query, $search = '', $orderBy = 'id', $sort = 'asc'): \Illuminate\Database\Eloquent\Builder
+    //{
+    //    $query = $query->select('id', 'name', 'title', 'published', 'status', 'slug')
+    //        ->where('status', true);
+    //
+    //    if (!empty($search)) {
+    //        $query->where(function ($query) use ($search) {
+    //            $query->where('name', 'like', '%' . $search . '%')
+    //                ->orWhere('title', 'like', '%' . $search . '%');
+    //                
+    //        });
+    //    }
+    //
+    //    $query->orderBy($orderBy, $sort);
+    //
+    //    return $query;
+    //}
+
+    //protected static function boot()
+    //{
+    //    parent::boot();
+    //
+    //    static::updated(function ($model) {
+    //       \Spatie\ResponseCache\Facades\ResponseCache::forget(url('/').'/'.config('{{ pluginKebab }}.{{ singularStrtolowerSnake }}_slug').'/'.$model->slug);
+    //    });
+    //    static::deleted(function ($model) {
+    //        \Spatie\ResponseCache\Facades\ResponseCache::forget(url('/').'/'.config('{{ pluginKebab }}.{{ singularStrtolowerSnake }}_slug').'/'.$model->slug);
+    //     });
     //}
 }

@@ -1,0 +1,9 @@
+<?php
+
+return [
+
+    '{{ singularStrtolowerSnake }}_slug'                 => env('{{ singularStrtoUpperSnake }}_SLUG','blog'),
+    '{{ singularStrtolowerSnake }}_title'                => env('{{ singularStrtoUpperSnake }}_TITLE','Blog'),
+    '{{ singularStrtolowerSnake }}_description'          => env('{{ singularStrtoUpperSnake }}_DESCRIPTION','Aktuelle Beiträge aus Saalfeld und unserem Stadtrat'),
+    '{{ singularStrtolowerSnake }}_pagination'           => env('{{ singularStrtoUpperSnake }}_PAGINATION',10),
+];

@@ -1,0 +1,35 @@
+<?php
+
+namespace {{ vendor }}\{{ plugin }}\Livewire\Front\{{ singularUcfirst }};
+
+
+use Livewire\Component;
+use Livewire\Attributes\Layout;
+use GrassFeria\Starterkid\Traits\LivewireIndexTrait;
+
+
+
+class Front{{ singularUcfirst }}Show extends Component
+{
+
+   
+   public $service;
+   public ${{ singularStrtolower }}; 
+   
+   public function mount($slug)
+   {
+      $this->{{ singularStrtolower }} = \{{ vendor }}\{{ plugin }}\Models\{{ singularUcfirst }}::where('slug',$slug)->firstOrFail();
+   }
+
+  
+    #[Layout('starterkid-frontend::components.layouts.front')]
+    public function render()
+    {
+     
+     
+      $services = \GrassFeria\StarterkidService\Models\Service::frontGetServicesWhereStatusIsOnline($this->search,$this->orderBy, $this->sort)->get();
+      return view('{{ pluginKebab }}::livewire.front.{{ singularStrtolowerKebab }}.front-{{ singularStrtolowerKebab }}-index',['services' => $services]);
+
+        
+    }
+}

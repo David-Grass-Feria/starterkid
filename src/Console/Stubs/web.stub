@@ -4,22 +4,19 @@ use Illuminate\Support\Facades\Route;
 use \{{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }}\{{ singularUcfirst }}Create;
 use \{{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }}\{{ singularUcfirst }}Edit;
 use \{{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }}\{{ singularUcfirst }}Index;
+//use \{{ vendor }}\{{ plugin }}\Livewire\Front\{{ singularUcfirst }}\Front{{ singularUcfirst }}Show;
+//use \{{ vendor }}\{{ plugin }}\Livewire\Front\{{ singularUcfirst }}\Front{{ singularUcfirst }}Index;
 
 
 
 
+Route::middleware(['web'])->group(function () {
+   
+    //Route::get(config('{{ pluginKebab }}.{{ singularStrtolowerSnake }}_slug'),Front{{ singularUcfirst }}Index::class)->name('front.{{ singularStrtolowerKebab }}.index');
+    //Route::get(config('{{ pluginKebab }}.{{ singularStrtolowerSnake }}_slug').'/{slug}',Front{{ singularUcfirst }}Show::class)->name('front.{{ singularStrtolowerKebab }}.show')->middleware('cache');
+  
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
+});
 
 
 Route::middleware([

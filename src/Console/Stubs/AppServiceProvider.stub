@@ -18,9 +18,9 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->register(RouteServiceProvider::class);
         $this->app->register(AuthServiceProvider::class);
-        //$this->mergeConfigFrom(
-        //    __DIR__.'/../../config/{{ pluginKebab }}.php', '{{ pluginKebab }}'
-        //);
+        $this->mergeConfigFrom(
+            __DIR__.'/../../config/{{ pluginKebab }}.php', '{{ pluginKebab }}'
+        );
         
     }
 
@@ -42,7 +42,8 @@ class AppServiceProvider extends ServiceProvider
         Livewire::component('{{ pluginKebab }}::{{ modelKebab }}-create',\{{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }}\{{ singularUcfirst }}Create::class);
         Livewire::component('{{ pluginKebab }}::{{ modelKebab }}-edit',\{{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }}\{{ singularUcfirst }}Edit::class);
         Livewire::component('{{ pluginKebab }}::{{ modelKebab }}-index',\{{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }}\{{ singularUcfirst }}Index::class);
-
+        //Livewire::component('{{ pluginKebab }}::front-{{ modelKebab }}-index',\{{ vendor }}\{{ plugin }}\Livewire\Front\{{ singularUcfirst }}\Front{{ singularUcfirst }}Index::class);
+        //Livewire::component('{{ pluginKebab }}::front-{{ modelKebab }}-show',\{{ vendor }}\{{ plugin }}\Livewire\Front\{{ singularUcfirst }}\Front{{ singularUcfirst }}Show::class);
        
         $this->publishes([
             __DIR__.'/../../stubs' => base_path('/'),

@@ -1,0 +1,31 @@
+<?php
+
+namespace {{ vendor }}\{{ plugin }}\Livewire\Front\{{ singularUcfirst }};
+
+
+use Livewire\Component;
+use Livewire\Attributes\Layout;
+use GrassFeria\Starterkid\Traits\LivewireIndexTrait;
+
+
+
+class Front{{ singularUcfirst }}Index extends Component
+{
+
+   
+   use LivewireIndexTrait;
+
+   public $robots;
+
+  
+    #[Layout('starterkid-frontend::components.layouts.front')]
+    public function render()
+    {
+     
+      ${{ pluralStrtolower }} = \{{ vendor }}\{{ plugin }}\Models\{{ singularUcfirst }}::frontGet{{ singularUcfirst }}WhereStatusIsOnline($this->search,$this->orderBy, $this->sort)->simplePaginate(config('{{ pluginKebab }}.{{ singularStrtolowerSnake }}_pagination'));
+      $services = \GrassFeria\StarterkidService\Models\Service::frontGetServicesWhereStatusIsOnline($this->search,$this->orderBy, $this->sort)->get();
+      return view('{{ pluginKebab }}::livewire.front.{{ singularStrtolowerKebab }}.front-{{ singularStrtolowerKebab }}-index',['services' => $services,'{{ pluralStrtolower }}' => ${{ pluralStrtolower }}]);
+
+        
+    }
+}

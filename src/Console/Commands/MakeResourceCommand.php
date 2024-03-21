@@ -16,7 +16,7 @@ class MakeResourceCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'starterkid:make-plugin {vendor} {plugin} {model}';
+    protected $signature = 'starterkid:make-plugin {vendor} {plugin} {model} {--front}';
 
     /**
      * The console command description.
@@ -51,6 +51,13 @@ class MakeResourceCommand extends Command
         $this->createCommandsFolder();
         $this->createStubsFolder();
 
+        // front
+        if($this->option('front')){
+            $this->createLivewireFrontFolder();
+            $this->createLivewireFrontFolderInRessources();
+            
+        }
+
         $this->createAppServiceProviderFile();
         $this->createAuthServiceProviderFile();
         $this->createRouteServiceProviderFile();
@@ -73,6 +80,16 @@ class MakeResourceCommand extends Command
         $this->createCommandFile();
         $this->createComposerJsonFile();
         $this->createLogoFile();
+        $this->createConfigFile();
+
+        // front
+        if($this->option('front')){
+            $this->createfrontNavlinkFile();
+            $this->createFrontLivewireIndexFile();
+            $this->createFrontLivewireShowFile();
+            $this->createFrontLivewireIndexBladeFile();
+            $this->createFrontLivewireShowBladeFile();
+        }
     }
 
     private function createAppServiceProviderFile()
@@ -116,6 +133,8 @@ class MakeResourceCommand extends Command
         $destinationPath = $this->getDestinationPath('/src/Livewire/'.Str::pluralStudly($this->argument('model'), 1) . '/' .  Str::pluralStudly($this->argument('model'), 1) . 'Index' . '.php');
         $this->generateFile($templatePath,$destinationPath);
     }
+
+
 
     private function createLivewireIndexBladeFile()
     {
@@ -238,6 +257,50 @@ class MakeResourceCommand extends Command
         $this->writeFile($destinationPath, $content);
     }
 
+    
+    private function createConfigFile()
+    {
+        $templatePath = $this->getStubsPath().'/config.stub';
+        $destinationPath = $this->getDestinationPath('/config/'.$this->convertPluginToSingularStrtolower().'.php');
+        $this->generateFile($templatePath,$destinationPath);
+    }
+
+    //front
+    private function createFrontNavlinkFile()
+    {
+        $templatePath = $this->getStubsPath().'/front-navlink.stub';
+        $destinationPath = $this->getDestinationPath('/config/front-navlink.php');
+        $this->generateFile($templatePath,$destinationPath);
+    }
+
+    private function createFrontLivewireIndexFile()
+    {
+        $templatePath = $this->getStubsPath().'/FrontLivewireIndex.stub';
+        $destinationPath = $this->getDestinationPath('/src/Livewire/Front/' .Str::pluralStudly($this->argument('model'), 1).'/' .  'Front'.Str::pluralStudly($this->argument('model'), 1) . 'Index' . '.php');
+        $this->generateFile($templatePath,$destinationPath);
+    }
+
+    private function createFrontLivewireShowFile()
+    {
+        $templatePath = $this->getStubsPath().'/FrontLivewireShow.stub';
+        $destinationPath = $this->getDestinationPath('/src/Livewire/Front/' .Str::pluralStudly($this->argument('model'), 1).'/' .  'Front'.Str::pluralStudly($this->argument('model'), 1) . 'Show' . '.php');
+        $this->generateFile($templatePath,$destinationPath);
+    }
+
+    private function createFrontLivewireIndexBladeFile()
+    {
+        $templatePath = $this->getStubsPath().'/front-livewire-index.stub';
+        $destinationPath = $this->getDestinationPath('/resources/views/livewire/front/'.$this->kebab($this->argument('model')) . '/' . 'front-'. $this->kebab($this->argument('model')) . '-index.blade' . '.php');
+        $this->generateFile($templatePath,$destinationPath);
+    }
+
+    private function createFrontLivewireShowBladeFile()
+    {
+        $templatePath = $this->getStubsPath().'/front-livewire-show.stub';
+        $destinationPath = $this->getDestinationPath('/resources/views/livewire/front/'.$this->kebab($this->argument('model')) . '/' . 'front-'. $this->kebab($this->argument('model')) . '-show.blade' . '.php');
+        $this->generateFile($templatePath,$destinationPath);
+    }
+
    
 
 
@@ -246,20 +309,23 @@ class MakeResourceCommand extends Command
         return 
         
         $replacements = [
-            '{{ pluralStrtolower }}' => $this->convertArgumentToPluralStrtolower(),
-            '{{ pluralUcfirst }}' => $this->convertArgumentToPluralUcfirst(),
-            '{{ singularUcfirst }}' => $this->convertArgumentToSingularUcfirst(),
-            '{{ singularStrtolower }}' => $this->convertArgumentToSingularStrtolower(),
-            '{{ singularStrtolowerKebab }}' => $this->kebab($this->argument('model')),
-            '{{ vendor }}' => $this->argument('vendor'),
-            '{{ plugin }}' => $this->argument('plugin'),
-            '{{ pluginStrToLower }}' => $this->convertPluginToSingularStrtolower(),
-            '{{ pluralStrtolowerSnake }}' => $this->convertArgumentToPluralStrtolowerSnake(),
-            '{{ pluginKebab }}'           => $this->convertPluginToSingularStrtolower(),
-            '{{ modelKebab }}'            => $this->convertModelToSingularStrtolower(),
-            '{{ vendorKebab }}'           => $this->convertVendorToSingularStrtolower(),
+            '{{ pluralStrtolower }}' => $this->convertArgumentToPluralStrtolower(), //{{ blogposts }}
+            '{{ pluralUcfirst }}' => $this->convertArgumentToPluralUcfirst(), //{{ Blogposts }}
+            '{{ singularUcfirst }}' => $this->convertArgumentToSingularUcfirst(), //{{ BlogPost }}
+            '{{ singularStrtolower }}' => $this->convertArgumentToSingularStrtolower(), //{{ blogpost }}
+            '{{ singularStrtolowerKebab }}' => $this->kebab($this->argument('model')), // blog-post
+            '{{ vendor }}' => $this->argument('vendor'), 
+            '{{ plugin }}' => $this->argument('plugin'), 
+            '{{ pluginStrToLower }}' => $this->convertPluginToSingularStrtolower(), //{{ password-manager }}
+            '{{ pluralStrtolowerSnake }}' => $this->convertArgumentToPluralStrtolowerSnake(),  //{{ blog_posts }}
+            '{{ singularStrtolowerSnake }}' => $this->convertArgumentToSingularStrtolowerSnake(),  //{{ blog_post }}
+            '{{ singularStrtoUpperSnake }}' => $this->convertArgumentToSingularStrtoUpperSnake(),  //{{ BLOG_POST }}
+            '{{ pluginKebab }}'           => $this->convertPluginToSingularStrtolower(), // password-manager
+            '{{ modelKebab }}'            => $this->convertModelToSingularStrtolower(), //{{ blog-post }}
+            '{{ vendorKebab }}'           => $this->convertVendorToSingularStrtolower(), //{{ grass-feria }}
             '{{ thumbVendor }}'           => $this->splitCamelCase($this->argument('vendor')),
             '{{ thumbPlugin }}'           => $this->splitCamelCase($this->argument('plugin')),
+            
         ];
     }
     
@@ -313,6 +379,20 @@ class MakeResourceCommand extends Command
         //{{ blog_posts }}
         $pluralStrtolowerSnake = strtolower(Str::plural(Str::of($this->argument('model'))->snake()));
         return $pluralStrtolowerSnake;
+    }
+
+    private function convertArgumentToSingularStrtolowerSnake()
+    {
+        //{{ blog_post }}
+        $singularStrtolowerSnake = strtolower(Str::singular(Str::of($this->argument('model'))->snake()));
+        return $singularStrtolowerSnake;
+    }
+
+    private function convertArgumentToSingularStrtoUpperSnake()
+    {
+        //{{ BLOG_POST }}
+        $singularStrtolowerSnake = strtoupper(Str::singular(Str::of($this->argument('model'))->snake()));
+        return $singularStrtolowerSnake;
     }
 
     private function convertArgumentToSingularUcfirst()
@@ -502,6 +582,25 @@ class MakeResourceCommand extends Command
     private function createStubsFolder()
     {
         $destinationPath = $this->getDestinationPath('/stubs/public');
+        if (!File::isDirectory($destinationPath)) {
+            File::makeDirectory($destinationPath, 0755, true, false);
+        }
+    }
+
+    //front
+    private function createLivewireFrontFolder()
+    {
+        
+        $destinationPath = $this->getDestinationPath('/src/Livewire/Front/'.Str::pluralStudly($this->argument('model'), 1));
+        if (!File::isDirectory($destinationPath)) {
+            File::makeDirectory($destinationPath, 0755, true, false);
+        }
+    }
+
+    private function createLivewireFrontFolderInRessources()
+    {
+        
+        $destinationPath = $this->getDestinationPath('/resources/views/livewire/front/'.$this->kebab($this->argument('model')), 1);
         if (!File::isDirectory($destinationPath)) {
             File::makeDirectory($destinationPath, 0755, true, false);
         }

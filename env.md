@@ -4,6 +4,8 @@ APP_ENV=dev
 APP_KEY=base64:xwwqWFIgS8+64gEeo3UJT8v9d62CopTzrU2FzhPneUM=
 APP_DEBUG=true
 APP_URL=http://localhost:8000
+APP_LOCALE=en
+APP_TIMEZONE="Europe/Berlin"
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1

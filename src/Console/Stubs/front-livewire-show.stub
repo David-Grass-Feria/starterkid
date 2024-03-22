@@ -13,7 +13,7 @@
     <x-starterkid-frontend::wrapper>
    
   
-    <x-starterkid-frontend::body-content heading="{{${{ singularStrtolower }}->name}}" content="{!!${{ singularStrtolower }}->content!!}" imgSrc="{{${{ singularStrtolower }}->getFirstMediaUrl('images',config('starterkid.spatie_conversions.large.name'))}}" imgAlt="{{${{ singularStrtolower }}->name}}" imageCredits="{{${{ singularStrtolower }}->image_credits}}" />
+    <x-starterkid-frontend::body-content heading="{{${{ singularStrtolower }}->name}}" content="{!!${{ singularStrtolower }}->content!!}" imgSrc="{{${{ singularStrtolower }}->getFirstMediaUrl('images','large')}}" imgAlt="{{${{ singularStrtolower }}->name}}" imageCredits="{{${{ singularStrtolower }}->image_credits}}" />
 
     
       

@@ -24,14 +24,7 @@
             {{${{ pluralStrtolower }}->links()}}
         </x-slot>
     
-            <x-starterkid-frontend::card-grid>
-            
-            @foreach(${{ pluralStrtolower }} as ${{ singularStrtolower }})
-           <x-starterkid-frontend::service-card :model="${{ singularStrtolower }}" name="{{${{ singularStrtolower }}->name}}" linkRoute="{{route('front.blog-post.show',${{ singularStrtolower }}->slug)}}" linkTitle="{{${{ singularStrtolower }}->name}}" buttonText="{{__('More info')}}" description="{!!${{ singularStrtolower }}->preview!!}" imgSrc="{{${{ singularStrtolower }}->getFirstMediaUrl('images',config('starterkid.spatie_conversions.medium.name'))}}" imgAlt="{{${{ singularStrtolower }}->name ?? ''}}" imageCredits="{{${{ singularStrtolower }}->image_credits}}" />
-            @endforeach
-
-            
-        </x-starterkid-frontend::card-grid>
+          
 
    
    

@@ -89,8 +89,8 @@ class SettingEdit extends Component
 
         if ($this->public_logos !== []) {
             \GrassFeria\Starterkid\Jobs\SpatieMediaLibary\DeleteMediaCollection::dispatch($this->setting, 'logo');
-            //(new \GrassFeria\Starterkid\Services\SpatieMediaLibary\SaveMediaWithFilenameService($this->logos,$this->setting,'logo','public','my-new-filename'));
-            (new \GrassFeria\Starterkid\Services\SpatieMediaLibary\SaveMediaService($this->public_logos, $this->setting, 'logo', 'public'));
+            (new \GrassFeria\Starterkid\Services\SpatieMediaLibary\SaveMediaWithFilenameService($this->public_logos,$this->setting,'logo','public',config('app.name')));
+            //(new \GrassFeria\Starterkid\Services\SpatieMediaLibary\SaveMediaService($this->public_logos, $this->setting, 'logo', 'public'));
         }
 
 

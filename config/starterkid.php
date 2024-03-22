@@ -23,23 +23,7 @@ return [
         'de'
     ],
 
-    'spatie_conversions' => [
-        'small' => [
-            'name'  => 'thumb',
-            'size'  => 100,
-
-        ],
-
-        'medium'  => [
-            'name' => 'medium',
-            'size' => 600,
-        ],
-
-        'large'   => [
-            'name' => 'large',
-            'size' => 1000,
-        ],
-    ],
+    
 
     
 

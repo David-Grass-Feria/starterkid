@@ -14,6 +14,7 @@ DB_PASSWORD=
 
 QUEUE_CONNECTION=sync
 REDIS_CLIENT=predis
+CACHE_DRIVER=redis
 
 MAIL_MAILER=smtp
 MAIL_HOST=mail.your-server.de

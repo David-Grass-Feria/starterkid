@@ -1,5 +1,9 @@
 <style>
  
+ body {
+  font-family: {{config('starterkid.font_familiy')}};
+ }
+
  .prose h2.anchored::before {
     content: "";
     display: block;

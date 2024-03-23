@@ -76,9 +76,9 @@ class {{ singularUcfirst }} extends Model implements HasMedia
     //          ->width(1200);
     //}
 
-    //public function scopeFrontGet{{ singularUcfirst }}WhereStatusIsOnline(\Illuminate\Database\Eloquent\Builder $query, $search = '', $orderBy = 'id', $sort = 'asc'): \Illuminate\Database\Eloquent\Builder
+    //public function scopeFrontGet{{ singularUcfirst }}WhereStatusIsOnline(\Illuminate\Database\Eloquent\Builder $query, $search = '', $orderBy = 'created_at', $sort = 'desc'): \Illuminate\Database\Eloquent\Builder
     //{
-    //    $query = $query->select('id', 'name', 'title', 'published', 'status', 'slug')
+    //    $query = $query->select('id', 'name', 'title', 'created_at', 'status', 'slug')
     //        ->where('status', true);
     //
     //    if (!empty($search)) {
@@ -89,7 +89,7 @@ class {{ singularUcfirst }} extends Model implements HasMedia
     //        });
     //    }
     //
-    //    $query->orderBy('published', 'desc');
+    //    $query->orderBy($oderBy, $sort);
     //
     //    return $query;
     //}

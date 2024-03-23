@@ -12,7 +12,7 @@ trait LivewireIndexTrait
 {
     use WithPagination;
     public $search;
-    public $orderBy = 'id';
+    public $orderBy = 'created_at';
     public $sort = 'DESC';
     public $perPage = 10;
     public $selected = [];

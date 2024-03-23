@@ -38,6 +38,11 @@ class {{ singularUcfirst }} extends Model implements HasMedia
         return $this->belongsTo(User::class);
     }
 
+    //public function getPublished()
+    //{
+    //    return $this->created_at->format(config('starterkid.time_format.date_time_format'));
+    //}
+
     //public function getDate()
     //{
     //    return $this->date->format(config('starterkid.time_format.date_format'));

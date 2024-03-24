@@ -38,5 +38,13 @@ font-weight: bold;
 
 }
 
+.ck-content .image img {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  max-width: 500px;
+  min-width: 100%;
+}
+
 
 

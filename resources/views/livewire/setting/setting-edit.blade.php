@@ -16,7 +16,7 @@
                 </a>
            
             <a target="_blank" href="{{route('horizon.index')}}" title="{{__('Go to Laravel Horizon')}}">
-                <x-starterkid::starterkid.button-secondary type="button">{{__('Go to Laravel Horizon')}}</x-starterkid::starterkid.button-secondary>
+                <x-starterkid::starterkid.button-secondary type="button">{{__('Laravel Horizon')}}</x-starterkid::starterkid.button-secondary>
                 </a>
 
                

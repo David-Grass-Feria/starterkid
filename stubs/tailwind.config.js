@@ -12,6 +12,10 @@ export default {
         './resources/views/**/*.blade.php',
         './packages/*/*/*/*/*.blade.php',
         './plugins/*/*/**/*.blade.php',
+        './vendor/grass-feria/starterkid/**/*.blade.php',
+        './vendor/grass-feria/starterkid-frontend/**/*.blade.php',
+        './vendor/grass-feria/starterkid-blog/**/*.blade.php',
+        './vendor/grass-feria/starterkid-service/**/*.blade.php',
     ],
 
     theme: {

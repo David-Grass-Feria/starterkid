@@ -99,10 +99,19 @@ class {{ singularUcfirst }} extends Model implements HasMedia
     //    parent::boot();
     //
     //    static::updated(function ($model) {
-    //       \Spatie\ResponseCache\Facades\ResponseCache::forget(url('/').'/'.config('{{ pluginKebab }}.{{ singularStrtolowerSnake }}_slug').'/'.$model->slug);
+    //        $url = route('front.{{ singularStrtolower }}.show', ['slug' => $model->slug]);
+    //        $cacheKey = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl($url);
+    //        \Illuminate\Support\Facades\Cache::forget($cacheKey);
+    //        $cacheKeyHomepage = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl(route('front.homepage'));
+    //        \Illuminate\Support\Facades\Cache::forget($cacheKeyHomepage);
+    //       
     //    });
     //    static::deleted(function ($model) {
-    //        \Spatie\ResponseCache\Facades\ResponseCache::forget(url('/').'/'.config('{{ pluginKebab }}.{{ singularStrtolowerSnake }}_slug').'/'.$model->slug);
+    //        $url = route('front.{{ singularStrtolower }}.show', ['slug' => $model->slug]);
+    //        $cacheKey = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl($url);
+    //        \Illuminate\Support\Facades\Cache::forget($cacheKey);
+    //        $cacheKeyHomepage = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl(route('front.homepage'));
+    //        \Illuminate\Support\Facades\Cache::forget($cacheKeyHomepage);
     //     });
     //}
 }

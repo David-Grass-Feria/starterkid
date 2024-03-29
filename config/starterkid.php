@@ -6,7 +6,7 @@ return [
     'search_on_dashboard'                       => env('SEARCH_ON_DASHBOARD', false),
     'enable_notifications'                      => env('ENABLE_NOTIFICATIONS', false),
     'temp_folder'                               => env('TEMP_FOLDER', 'temp'),
-    'font_familiy'                              => env('FONT_FAMILIY', 'Universal Sans'),
+    'font_familiy'                              => env('FONT_FAMILIY', 'Nunito'),
     'time_format'                               => [
 
         'time_format'                           => 'H:i',

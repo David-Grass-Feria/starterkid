@@ -41,6 +41,11 @@ return [
         ],    
     ],
 
+    'image_width_height_attributes'    => [
+        'width'             => env('IMAGE_WIDTH_HEIGHT_ATTRIBUTES_WIDTH',700),
+        'height'            => env('IMAGE_WIDTH_HEIGHT_ATTRIBUTES_HEIGHT',500),
+    ],
+
     
 
     

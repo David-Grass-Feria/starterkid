@@ -23,6 +23,24 @@ return [
         'de'
     ],
 
+    'image_conversions' => [
+        'thumb' => [
+            'width'         => env('IMAGE_CONVERSIONS_THUMB_WIDTH',200),
+            'sharpen'       => env('IMAGE_CONVERSIONS_THUMB_SHARPEN',10),
+            'quality'       => env('IMAGE_CONVERSIONS_THUMB_WIDTH',80),
+        ],
+        'medium' => [
+            'width'         => env('IMAGE_CONVERSIONS_THUMB_WIDTH',400),
+            'sharpen'       => env('IMAGE_CONVERSIONS_THUMB_SHARPEN',10),
+            'quality'       => env('IMAGE_CONVERSIONS_THUMB_WIDTH',80),
+        ],
+        'large' => [
+            'width'         => env('IMAGE_CONVERSIONS_THUMB_WIDTH',700),
+            'sharpen'       => env('IMAGE_CONVERSIONS_THUMB_SHARPEN',10),
+            'quality'       => env('IMAGE_CONVERSIONS_THUMB_WIDTH',80),
+        ],    
+    ],
+
     
 
     

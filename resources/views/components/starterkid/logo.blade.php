@@ -1,1 +1,1 @@
-<img {{$attributes}} src="{{ Cache::has('logo') ? Cache::get('logo') : asset('/logo.png') }}">
+<img {{$attributes}} src="{{ Cache::has($conversion ?? 'logo') ? Cache::get($conversion ?? 'logo') : asset('/logo.png') }}">

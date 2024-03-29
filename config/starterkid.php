@@ -30,14 +30,14 @@ return [
             'quality'       => env('IMAGE_CONVERSIONS_THUMB_WIDTH',80),
         ],
         'medium' => [
-            'width'         => env('IMAGE_CONVERSIONS_THUMB_WIDTH',400),
-            'sharpen'       => env('IMAGE_CONVERSIONS_THUMB_SHARPEN',10),
-            'quality'       => env('IMAGE_CONVERSIONS_THUMB_WIDTH',80),
+            'width'         => env('IMAGE_CONVERSIONS_MEDIUM_WIDTH',400),
+            'sharpen'       => env('IMAGE_CONVERSIONS_MEDIUM_SHARPEN',10),
+            'quality'       => env('IMAGE_CONVERSIONS_MEDIUM_WIDTH',80),
         ],
         'large' => [
-            'width'         => env('IMAGE_CONVERSIONS_THUMB_WIDTH',700),
-            'sharpen'       => env('IMAGE_CONVERSIONS_THUMB_SHARPEN',10),
-            'quality'       => env('IMAGE_CONVERSIONS_THUMB_WIDTH',80),
+            'width'         => env('IMAGE_CONVERSIONS_LARGE_WIDTH',700),
+            'sharpen'       => env('IMAGE_CONVERSIONS_LARGE_SHARPEN',10),
+            'quality'       => env('IMAGE_CONVERSIONS_LARGE_WIDTH',80),
         ],    
     ],
 

@@ -35,15 +35,15 @@ return [
             'quality'       => env('IMAGE_CONVERSIONS_MEDIUM_QUALITY',80),
         ],
         'large' => [
-            'width'         => env('IMAGE_CONVERSIONS_LARGE_WIDTH',700),
+            'width'         => env('IMAGE_CONVERSIONS_LARGE_WIDTH',600),
             'sharpen'       => env('IMAGE_CONVERSIONS_LARGE_SHARPEN',10),
             'quality'       => env('IMAGE_CONVERSIONS_LARGE_QUALITY',80),
         ],    
     ],
 
     'image_width_height_attributes'    => [
-        'width'             => env('IMAGE_WIDTH_HEIGHT_ATTRIBUTES_WIDTH',700),
-        'height'            => env('IMAGE_WIDTH_HEIGHT_ATTRIBUTES_HEIGHT',500),
+        'width'             => env('IMAGE_WIDTH_HEIGHT_ATTRIBUTES_WIDTH',600),
+        'height'            => env('IMAGE_WIDTH_HEIGHT_ATTRIBUTES_HEIGHT',400),
     ],
 
     

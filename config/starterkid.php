@@ -42,8 +42,17 @@ return [
     ],
 
     'image_width_height_attributes'    => [
-        'width'             => env('IMAGE_WIDTH_HEIGHT_ATTRIBUTES_WIDTH',600),
-        'height'            => env('IMAGE_WIDTH_HEIGHT_ATTRIBUTES_HEIGHT',400),
+        
+        'medium'            => [
+            'width'             => env('IMAGE_WIDTH_HEIGHT_ATTRIBUTES_MEDIUM.WIDTH',300),
+            'height'            => env('IMAGE_WIDTH_HEIGHT_ATTRIBUTES_MEDIUM.HEIGHT',100),
+        ],
+        
+        'large'            => [
+            'width'             => env('IMAGE_WIDTH_HEIGHT_ATTRIBUTES_LARGE.WIDTH',600),
+            'height'            => env('IMAGE_WIDTH_HEIGHT_ATTRIBUTES_LARGE.HEIGHT',400),
+        ]
+        
     ],
 
     

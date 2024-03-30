@@ -30,12 +30,12 @@ return [
             'quality'       => env('IMAGE_CONVERSIONS_THUMB_QUALITY',80),
         ],
         'medium' => [
-            'width'         => env('IMAGE_CONVERSIONS_MEDIUM_WIDTH',400),
+            'width'         => env('IMAGE_CONVERSIONS_MEDIUM_WIDTH',500),
             'sharpen'       => env('IMAGE_CONVERSIONS_MEDIUM_SHARPEN',10),
-            'quality'       => env('IMAGE_CONVERSIONS_MEDIUM_QUALITY',100),
+            'quality'       => env('IMAGE_CONVERSIONS_MEDIUM_QUALITY',80),
         ],
         'large' => [
-            'width'         => env('IMAGE_CONVERSIONS_LARGE_WIDTH',600),
+            'width'         => env('IMAGE_CONVERSIONS_LARGE_WIDTH',700),
             'sharpen'       => env('IMAGE_CONVERSIONS_LARGE_SHARPEN',10),
             'quality'       => env('IMAGE_CONVERSIONS_LARGE_QUALITY',80),
         ],    
@@ -44,13 +44,13 @@ return [
     'image_width_height_attributes'    => [
         
         'medium'            => [
-            'width'             => env('IMAGE_WIDTH_HEIGHT_ATTRIBUTES_MEDIUM.WIDTH',400),
-            'height'            => env('IMAGE_WIDTH_HEIGHT_ATTRIBUTES_MEDIUM.HEIGHT',200),
+            'width'             => env('IMAGE_WIDTH_HEIGHT_ATTRIBUTES_MEDIUM.WIDTH',500),
+            'height'            => env('IMAGE_WIDTH_HEIGHT_ATTRIBUTES_MEDIUM.HEIGHT',300),
         ],
         
         'large'            => [
-            'width'             => env('IMAGE_WIDTH_HEIGHT_ATTRIBUTES_LARGE.WIDTH',600),
-            'height'            => env('IMAGE_WIDTH_HEIGHT_ATTRIBUTES_LARGE.HEIGHT',400),
+            'width'             => env('IMAGE_WIDTH_HEIGHT_ATTRIBUTES_LARGE.WIDTH',700),
+            'height'            => env('IMAGE_WIDTH_HEIGHT_ATTRIBUTES_LARGE.HEIGHT',300),
         ]
         
     ],

@@ -44,7 +44,7 @@ return [
     'image_width_height_attributes'    => [
         
         'medium'            => [
-            'width'             => env('IMAGE_WIDTH_HEIGHT_ATTRIBUTES_MEDIUM.WIDTH',300),
+            'width'             => env('IMAGE_WIDTH_HEIGHT_ATTRIBUTES_MEDIUM.WIDTH',200),
             'height'            => env('IMAGE_WIDTH_HEIGHT_ATTRIBUTES_MEDIUM.HEIGHT',100),
         ],
         

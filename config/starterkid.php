@@ -30,12 +30,12 @@ return [
             'quality'       => env('IMAGE_CONVERSIONS_THUMB_QUALITY',80),
         ],
         'medium' => [
-            'width'         => env('IMAGE_CONVERSIONS_MEDIUM_WIDTH',300),
+            'width'         => env('IMAGE_CONVERSIONS_MEDIUM_WIDTH',500),
             'sharpen'       => env('IMAGE_CONVERSIONS_MEDIUM_SHARPEN',10),
             'quality'       => env('IMAGE_CONVERSIONS_MEDIUM_QUALITY',80),
         ],
         'large' => [
-            'width'         => env('IMAGE_CONVERSIONS_LARGE_WIDTH',600),
+            'width'         => env('IMAGE_CONVERSIONS_LARGE_WIDTH',700),
             'sharpen'       => env('IMAGE_CONVERSIONS_LARGE_SHARPEN',10),
             'quality'       => env('IMAGE_CONVERSIONS_LARGE_QUALITY',80),
         ],    

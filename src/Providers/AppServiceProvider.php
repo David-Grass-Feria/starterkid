@@ -64,7 +64,7 @@ class AppServiceProvider extends ServiceProvider
                     // Logo und Favicon Logik
                     if ($setting->hasMedia('logo')) {
                         $logo = Cache::rememberForever('logo', function () use ($setting) {
-                            return $setting->getFirstMediaUrl('logo','large');
+                            return $setting->getFirstMediaUrl('logo','medium');
                         });
                         $logoThumb = Cache::rememberForever('logo-thumb', function () use ($setting) {
                             return $setting->getFirstMediaUrl('logo','thumb');

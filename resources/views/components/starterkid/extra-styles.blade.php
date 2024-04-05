@@ -7,8 +7,8 @@
  .prose h2.anchored::before {
     content: "";
     display: block;
-    height: 100px; /* Höhe der Navbar anpassen */
-    margin-top: -100px; /* Gleicher Wert, aber negativ */
+    height: 150px; /* Höhe der Navbar anpassen */
+    margin-top: -150px; /* Gleicher Wert, aber negativ */
     visibility: hidden;
     pointer-events: none;
 }

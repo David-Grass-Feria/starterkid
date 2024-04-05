@@ -8,7 +8,7 @@
     content: "";
     display: block;
     height: 150px; /* Höhe der Navbar anpassen */
-    margin-top: -200px; /* Gleicher Wert, aber negativ */
+    margin-top: -100px; /* Gleicher Wert, aber negativ */
     visibility: hidden;
     pointer-events: none;
 }

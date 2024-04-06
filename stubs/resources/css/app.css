@@ -2,6 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@layer base {
+    @font-face {
+      font-family: 'Nunito';
+      font-weight: 900;
+      font-display: swap;
+      src: url('/public/fonts/nunito/Nunito-Black.woff2') format('woff2');
+    }
+    @font-face {
+        font-family: 'Nunito';
+        font-weight: 800;
+        font-display: swap;
+        src: url('/public/fonts/nunito/Nunito-ExtraBold.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Nunito';
+        font-weight: 700;
+        font-display: swap;
+        src: url('/public/fonts/nunito/Nunito-Bold.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Nunito';
+        font-weight: 600;
+        font-display: swap;
+        src: url('/public/fonts/nunito/Nunito-Medium.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Nunito';
+        font-weight: 300;
+        font-display: swap;
+        src: url('/public/fonts/nunito/Nunito-Light.woff2') format('woff2');
+      }
+  }
+
+
 [x-cloak] {
     display: none;
 }

@@ -1,6 +1,11 @@
 <style>
  
-
+ body p {
+    
+    font-size: 1.2rem;
+    margin-top: -0.2em; /* Kleinere obere Abstände */
+    margin-bottom: -0.2em; /* Kleinere untere Abstände */
+  }
 
  .prose h2.anchored::before {
     content: "";
@@ -38,9 +43,10 @@
 
   .prose p {
     
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-top: -0.2em; /* Kleinere obere Abstände */
     margin-bottom: -0.2em; /* Kleinere untere Abstände */
+    color:#000000;
   }
 
   .prose h2 {

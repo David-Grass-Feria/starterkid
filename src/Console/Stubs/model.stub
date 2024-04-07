@@ -71,15 +71,18 @@ class {{ singularUcfirst }} extends Model implements HasMedia
     //      $this->addMediaConversion('thumb')
     //          ->width(config('starterkid.image_conversions.thumb.width'))
     //          ->sharpen(config('starterkid.image_conversions.thumb.sharpen'))
-    //          ->quality(config('starterkid.image_conversions.thumb.quality'));
-    //      $this->addMediaConversion('medium')
+    //          ->quality(config('starterkid.image_conversions.thumb.quality'))
+    //          ->format('webp');
+    //        $this->addMediaConversion('medium')
     //          ->width(config('starterkid.image_conversions.medium.width'))
     //          ->sharpen(config('starterkid.image_conversions.medium.sharpen'))
-    //          ->quality(config('starterkid.image_conversions.medium.quality'));
-    //      $this->addMediaConversion('large')
+    //          ->quality(config('starterkid.image_conversions.medium.quality'))
+    //          ->format('webp');
+    //        $this->addMediaConversion('large')
     //          ->width(config('starterkid.image_conversions.large.width'))
     //          ->sharpen(config('starterkid.image_conversions.large.sharpen'))
-    //          ->quality(config('starterkid.image_conversions.large.quality'));
+    //          ->quality(config('starterkid.image_conversions.large.quality'))
+    //          ->format('webp');
     //}
 
     //public function scopeFrontGet{{ singularUcfirst }}WhereStatusIsOnline(\Illuminate\Database\Eloquent\Builder $query, $search = '', $orderBy = 'created_at', $sort = 'desc'): \Illuminate\Database\Eloquent\Builder
@@ -108,16 +111,23 @@ class {{ singularUcfirst }} extends Model implements HasMedia
     //        $url = route('front.{{ singularStrtolower }}.show', ['slug' => $model->slug]);
     //        $cacheKey = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl($url);
     //        \Illuminate\Support\Facades\Cache::forget($cacheKey);
+    //        \GrassFeria\StarterkidFrontend\Jobs\PreloadCacheJob::dispatch($url);
+    //
     //        $cacheKeyHomepage = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl(route('front.homepage'));
     //        \Illuminate\Support\Facades\Cache::forget($cacheKeyHomepage);
+    //        \GrassFeria\StarterkidFrontend\Jobs\PreloadCacheJob::dispatch(route('front.homepage'));
     //       
     //    });
     //    static::deleted(function ($model) {
     //        $url = route('front.{{ singularStrtolower }}.show', ['slug' => $model->slug]);
     //        $cacheKey = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl($url);
     //        \Illuminate\Support\Facades\Cache::forget($cacheKey);
+    //        \GrassFeria\StarterkidFrontend\Jobs\PreloadCacheJob::dispatch($url);
+    //
+    //
     //        $cacheKeyHomepage = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl(route('front.homepage'));
     //        \Illuminate\Support\Facades\Cache::forget($cacheKeyHomepage);
+    //        \GrassFeria\StarterkidFrontend\Jobs\PreloadCacheJob::dispatch(route('front.homepage'));
     //     });
     //}
 }

@@ -38,10 +38,10 @@
 
   .prose p {
     
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-top: -0.2em; /* Kleinere obere Abstände */
     margin-bottom: -0.2em; /* Kleinere untere Abstände */
-    color:#000000;
+    
   }
 
   .prose h2 {

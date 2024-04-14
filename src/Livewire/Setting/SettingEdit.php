@@ -64,14 +64,7 @@ class SettingEdit extends Component
         return redirect()->route('settings.edit', 1)->with('success', __('Temporary files have been removed.'));
     }
 
-    public function clearAllCaches()
-    {
-        Artisan::call('cache:clear');
-        Artisan::call('config:clear');
-        Artisan::call('route:clear');
-        Artisan::call('view:clear');
-        return redirect()->route('settings.edit', 1)->with('success', __('Cache cleared'));
-    }
+    
 
 
 

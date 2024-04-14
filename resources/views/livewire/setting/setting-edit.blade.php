@@ -56,9 +56,7 @@
             <div class="mt-5">
             <x-starterkid::starterkid.button-secondary type="button" wire:click="clearTempFolders">{{__('Remove temporary files remnants')}}</x-starterkid::starterkid.button-secondary>
             </div>
-            <div class="mt-5">
-            <x-starterkid::starterkid.button-secondary type="button" wire:click="clearAllCaches">{{__('Clear cache')}}</x-starterkid::starterkid.button-secondary>
-            </div>
+           
             
             
         </x-starterkid::starterkid.form>

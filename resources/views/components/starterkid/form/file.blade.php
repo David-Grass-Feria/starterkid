@@ -30,12 +30,18 @@
                 server: {
                     process: (fieldname, file, metadata, load, error, progress, abort, transfer, options) => {
                         @this.upload('{{ $for }}', file, load, error, progress)
-                    }
+                    },
+                    revert: (uniqueFileId, load, error) => {
+                    @this.call('removeFile', uniqueFileId, load, error);
+                }
 
 
                 }
+               
 
             });
+
+           
             
         }
         initFilepond();

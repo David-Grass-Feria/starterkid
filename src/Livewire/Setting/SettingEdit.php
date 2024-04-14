@@ -106,6 +106,33 @@ class SettingEdit extends Component
         Artisan::call('cache:clear');
         return redirect()->route('settings.edit', 1)->with('success', __('Setting updated'));
     }
+
+    public function removeFile($fileId)
+    {
+       
+        // delete files if click delete button on filepond form
+        
+        // public_photos
+         Storage::delete('livewire-tmp'.'/'.$fileId);
+         foreach($this->public_logos as $key => $file){
+           if($file->getFilename() == $fileId){
+             unset($this->public_logos[$key]);
+           }
+         }
+
+         // public_photos
+         Storage::delete('livewire-tmp'.'/'.$fileId);
+         foreach($this->public_favicons as $key => $file){
+           if($file->getFilename() == $fileId){
+             unset($this->public_favicons[$key]);
+           }
+         }
+
+         // more here
+ 
+    }
+
+
     public function render()
     {
         return view('starterkid::livewire.setting.setting-edit');

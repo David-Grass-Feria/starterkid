@@ -4,6 +4,7 @@ namespace {{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }};
 
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Storage;
 
 
 class {{ singularUcfirst }}Edit extends Component
@@ -67,6 +68,25 @@ class {{ singularUcfirst }}Edit extends Component
         return redirect()->route('{{ pluralStrtolower }}.index')->with('success', __('{{ singularUcfirst }} updated'));
 
     }
+
+    public function removeFile($fileId)
+    {
+       
+        // delete files if click delete button on filepond form
+        
+        // public_photos
+         Storage::delete('livewire-tmp'.'/'.$fileId);
+         foreach($this->public_photos as $key => $file){
+           if($file->getFilename() == $fileId){
+             unset($this->public_photos[$key]);
+           }
+         }
+
+         // more here
+ 
+    }
+
+
     public function render()
     {
         

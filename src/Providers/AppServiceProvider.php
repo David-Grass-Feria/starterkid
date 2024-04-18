@@ -11,6 +11,7 @@ use Illuminate\Support\ServiceProvider;
 
 use App\Providers\PluginServiceProvider;
 use GrassFeria\Starterkid\Console\Commands\WebInstallCommand;
+use GrassFeria\Starterkid\Console\Commands\CreateBackupCommand;
 use GrassFeria\Starterkid\Console\Commands\MakeResourceCommand;
 use GrassFeria\Starterkid\Console\Commands\ClearTempFoldersCommand;
 
@@ -108,6 +109,7 @@ class AppServiceProvider extends ServiceProvider
                 MakeResourceCommand::class,
                 ClearTempFoldersCommand::class,
                 WebInstallCommand::class,
+                CreateBackupCommand::class,
                 
                 
                 

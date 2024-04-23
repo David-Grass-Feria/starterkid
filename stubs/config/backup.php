@@ -196,7 +196,7 @@ return [
             \Spatie\Backup\Notifications\Notifications\CleanupHasFailedNotification::class => ['mail'],
         //    \Spatie\Backup\Notifications\Notifications\BackupWasSuccessfulNotification::class => ['mail'],
         //    \Spatie\Backup\Notifications\Notifications\HealthyBackupWasFoundNotification::class => ['mail'],
-        //    \Spatie\Backup\Notifications\Notifications\CleanupWasSuccessfulNotification::class => ['mail'],
+            \Spatie\Backup\Notifications\Notifications\CleanupWasSuccessfulNotification::class => ['mail'],
         ],
 
         /*
@@ -206,7 +206,7 @@ return [
         'notifiable' => \Spatie\Backup\Notifications\Notifiable::class,
 
         'mail' => [
-            'to' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+            'to' => env('backup_mail_address', 'hello@example.com'),
 
             'from' => [
                 'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),

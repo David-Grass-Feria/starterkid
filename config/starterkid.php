@@ -1,7 +1,8 @@
 <?php
 
 return [
-    'global_admin'                              => 'superadmin',             
+    'global_admin'                              => 'superadmin',
+    'backup_mail_address'                       => env('BACKUP_MAIL_ADDRESS',''),
     'max_file_size_mb'                          => env('MAX_FILE_SIZE_MB',12), //12MB
     'search_on_dashboard'                       => env('SEARCH_ON_DASHBOARD', false),
     'enable_notifications'                      => env('ENABLE_NOTIFICATIONS', false),

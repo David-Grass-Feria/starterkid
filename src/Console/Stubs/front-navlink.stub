@@ -2,7 +2,7 @@
 
 return [
     [
-        'title' => env('{{ singularStrtoUpperSnake }}_TITLE','Blog'),
+        'title' => env('{{ singularStrtoUpperSnake }}_MENU_NAME','Blog'),
         'route' => 'front.{{ singularStrtolowerKebab }}.index',
         'active' => ['front.{{ singularStrtolowerKebab }}.index','front.{{ singularStrtolowerKebab }}.show'],
         'order' => env('{{ singularStrtoUpperSnake }}_ORDER_FOR_NAV',1),

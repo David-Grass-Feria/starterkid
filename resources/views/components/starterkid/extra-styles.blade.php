@@ -41,7 +41,7 @@
     font-size: 1.2rem;
     margin-top: -0.2em; /* Kleinere obere Abstände */
     margin-bottom: -0.2em; /* Kleinere untere Abstände */
-    color:#000;
+   
     
   }
 

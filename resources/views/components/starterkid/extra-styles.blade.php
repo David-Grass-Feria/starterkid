@@ -65,6 +65,13 @@
   border: 1px solid gray;
 }
 
+.prose :where(figcaption):not(:where([class~=not-prose],[class~=not-prose] *)) {
+    color: #000000;
+    font-size: .875em;
+    line-height: 1.4285714;
+    margin-top: 0.8571429em;
+}
+
 
 </style>
 

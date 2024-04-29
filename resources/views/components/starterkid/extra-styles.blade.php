@@ -15,6 +15,7 @@
   .prose a {
     
     text-decoration: underline;
+   
   }
 
  
@@ -71,6 +72,14 @@
     line-height: 1.4285714;
     margin-top: 0.8571429em;
 }
+
+a[class^="cite_note_"] {
+    font-size:13px;
+    font-weight:700;
+    
+}
+
+
 
 
 </style>

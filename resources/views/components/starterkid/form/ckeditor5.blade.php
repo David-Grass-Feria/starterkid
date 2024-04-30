@@ -141,7 +141,26 @@
 
                             ]
                         },
-                        
+                        link: {
+
+                            decorators: [{
+                                    mode: 'manual',
+                                    label: 'NoFollow',
+                                    attributes: {
+                                        rel: 'nofollow'
+                                    }
+                                },
+                                {
+                                    mode: 'manual',
+                                    label: 'OpenInNewWindow',
+                                    attributes: {
+                                        target: '_blank'
+                                    }
+                                }
+
+
+                            ]
+                        },
 
 
 

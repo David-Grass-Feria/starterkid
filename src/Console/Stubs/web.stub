@@ -12,8 +12,8 @@ use \{{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }}\{{ singularUcfirst
 
 Route::middleware(['web'])->group(function () {
    
-    //Route::get(config('{{ pluginKebab }}.{{ singularStrtolowerSnake }}_slug'),Front{{ singularUcfirst }}Index::class)->name('front.{{ singularStrtolowerKebab }}.index');
-    //Route::get(config('{{ pluginKebab }}.{{ singularStrtolowerSnake }}_slug').'/{slug}',Front{{ singularUcfirst }}Show::class)->name('front.{{ singularStrtolowerKebab }}.show')->middleware('cache');
+    //Route::get(config('{{ pluginKebab }}.{{ singularStrtolowerSnake }}_slug'),Front{{ singularUcfirst }}Index::class)->name('front.{{ singularStrtolowerKebab }}.index')->middleware('minify');
+    //Route::get(config('{{ pluginKebab }}.{{ singularStrtolowerSnake }}_slug').'/{slug}',Front{{ singularUcfirst }}Show::class)->name('front.{{ singularStrtolowerKebab }}.show')->middleware('cache','minify');
   
 
 });

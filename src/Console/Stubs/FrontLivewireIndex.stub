@@ -23,7 +23,7 @@ class Front{{ singularUcfirst }}Index extends Component
     {
      
       ${{ pluralStrtolower }} = \{{ vendor }}\{{ plugin }}\Models\{{ singularUcfirst }}::frontGet{{ singularUcfirst }}WhereStatusIsOnline($this->search,$this->orderBy, $this->sort)->simplePaginate(config('{{ pluginKebab }}.{{ singularStrtolowerSnake }}_pagination'));
-      $services = \GrassFeria\StarterkidService\Models\Service::frontGetServicesWhereStatusIsOnline($this->search,$this->orderBy, $this->sort)->get();
+      $services = \GrassFeria\StarterkidService\Models\Service::frontGetServicesWhereStatusIsOnline()->get();
       return view('{{ pluginKebab }}::livewire.front.{{ singularStrtolowerKebab }}.front-{{ singularStrtolowerKebab }}-index',['services' => $services,'{{ pluralStrtolower }}' => ${{ pluralStrtolower }}]);
 
         

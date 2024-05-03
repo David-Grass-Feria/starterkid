@@ -1,6 +1,6 @@
 <x-slot:title>{{${{ singularStrtolower }}->name}}</x-slot>
 <x-slot:robots>index, follow</x-slot>
-
+<x-slot:description>{{${{ singularStrtolower }}->preview}}</x-slot>
 
 <div>
     @include('starterkid-frontend::header')

@@ -73,6 +73,8 @@
     margin-top: 0.8571429em;
 }
 
+
+
 a[class^="cite_note_"] {
     font-size:13px;
     font-weight:700;

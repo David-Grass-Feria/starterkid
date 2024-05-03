@@ -27,8 +27,8 @@ class Front{{ singularUcfirst }}Show extends Component
     {
      
      
-      $services = \GrassFeria\StarterkidService\Models\Service::frontGetServicesWhereStatusIsOnline($this->search,$this->orderBy, $this->sort)->get();
-      return view('{{ pluginKebab }}::livewire.front.{{ singularStrtolowerKebab }}.front-{{ singularStrtolowerKebab }}-index',['services' => $services]);
+      $services = \GrassFeria\StarterkidService\Models\Service::frontGetServicesWhereStatusIsOnline()->get();
+      return view('{{ pluginKebab }}::livewire.front.{{ singularStrtolowerKebab }}.front-{{ singularStrtolowerKebab }}-show',['services' => $services]);
 
         
     }

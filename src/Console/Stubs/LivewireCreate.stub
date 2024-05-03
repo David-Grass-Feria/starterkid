@@ -33,6 +33,7 @@ class {{ singularUcfirst }}Create extends Component
 
         $validated = $this->validate([
             //'title'                     => 'required|string',
+            //'slug'                      => 'required|string|unique:{{ pluralStrtolowerSnake }}',
             //'color'                     => 'required|string',
             //'range'                     => 'required|string',
             //'about'                     => 'required|string',

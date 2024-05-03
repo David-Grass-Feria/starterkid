@@ -5,6 +5,7 @@ namespace {{ vendor }}\{{ plugin }}\Livewire\{{ singularUcfirst }};
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rule;
 
 
 class {{ singularUcfirst }}Edit extends Component
@@ -36,6 +37,7 @@ class {{ singularUcfirst }}Edit extends Component
 
 
         $validated = $this->validate([
+            //'slug'                      => ['required', 'string', Rule::unique('{{ pluralStrtolowerSnake }}')->ignore($this->{{ singularStrtolower }}->id)],
             //'title'                     => 'required|string',
             //'color'                     => 'required|string',
             //'range'                     => 'required|string',

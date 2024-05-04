@@ -81,6 +81,10 @@ a[class^="cite_note_"] {
     
 }
 
+.prose :where(tbody td:first-child,tfoot td:first-child):not(:where([class~=not-prose],[class~=not-prose] *)) {
+    padding-left: 0;
+    padding: 10px;
+}
 
 
 

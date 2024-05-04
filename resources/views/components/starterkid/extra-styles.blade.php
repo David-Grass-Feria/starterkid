@@ -59,7 +59,7 @@
   }
 
  .prose td {
-  border: 1px solid gray;
+  border: 1.5px solid black;
 }
 
 .prose hr {

@@ -1,7 +1,7 @@
 <div class="{{ $divClass }}">
     @foreach($record->getMedia($collection) as $file)
-        <div class="settingSecondaryBackgroundColor rounded-md relative">
-        <a class="text-xs text-font_secondary" target="_blank" href="{{ route('stream.files', ['media' => $file->id,'recordId' => $record]) }}">
+        <div class="bg-gray-600 rounded-md relative">
+        <a class="text-xs text-white" target="_blank" href="{{ route('stream.files', ['media' => $file->id,'recordId' => $record]) }}">
             <div class="flex flex-col items-center space-x-1">
             <span>{{ Str::limit($file->name,10) }}</span>
             <span>{{ $file->extension }}</span>

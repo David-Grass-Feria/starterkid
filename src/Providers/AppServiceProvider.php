@@ -79,6 +79,15 @@ class AppServiceProvider extends ServiceProvider
                         $folderId = Cache::get('favicon');
                         View::share('settingsFaviconFolderId', $folderId);
                     }
+
+                    if ($setting->banner_message !== '') {
+                        $settingBannerMessage = Cache::rememberForever('banner_message', function () use ($setting) {
+                            View::share('settingBannerMessage', $setting->banner_message);
+                        });
+                        
+                    }
+
+                    
                 }
             }
         } catch (QueryException $e) {

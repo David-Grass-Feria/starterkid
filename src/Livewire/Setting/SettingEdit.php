@@ -96,7 +96,7 @@ class SettingEdit extends Component
         }
 
 
-        Artisan::call('cache:clear');
+        
         return redirect()->route('settings.edit', 1)->with('success', __('Setting updated'));
     }
 

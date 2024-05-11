@@ -164,6 +164,14 @@
 @endif
 ```
 
+#### show image uploads in table
+```
+ <x-starterkid::starterkid.td>
+                    @if($subject->getFirstMediaUrl('images','thumb'))
+                    <img src="{{$subject->getFirstMediaUrl('images','thumb')}}" alt="{{$subject->name}}" class="h-12 w-auto" />
+                    @endif
+</x-starterkid::starterkid.td>
+```
 
 #### file uploads
 

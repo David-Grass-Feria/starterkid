@@ -164,6 +164,14 @@
 @endif
 ```
 
+#### add image from url
+```
+ $this->public_images = ['https://lh5.googleusercontent.com/p/AF1QipNO680Wzr6WtVtnkAm9cIyykpBos93XjrOChPDo=w408-h272-k-no'];
+        foreach($this->public_images as $image){
+            $this->shelter->addMediaFromUrl($image)->toMediaCollection('images');
+        }
+```
+
 #### show image uploads in table
 ```
  <x-starterkid::starterkid.td>

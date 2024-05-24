@@ -21,7 +21,11 @@
     </div>
     </div>
 </div>
+@if(isset($pagination))
 <div class="mt-5">
+    
 {{$pagination}}
+
 </div>
+@endif
 </div>

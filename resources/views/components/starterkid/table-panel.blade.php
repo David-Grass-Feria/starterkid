@@ -2,11 +2,13 @@
     <div>
     <div class="flex flex-col space-y-2 md:flex-row md:items-center md:space-x-2 md:space-y-0">
     {{$tableHeader ?? ''}}
+    @if(isset($selected))
     @if($selected)
     <x-starterkid::starterkid.button-danger wire:click="destroyRecords" wire:confirm="{{__('Are you sure?')}}">{{__('Delete')}}<x-starterkid::starterkid.count>{{count($selected)}}</x-starterkid::starterkid.count><x-starterkid::starterkid.please-wait wire:loading wire:target="destroyRecords">{{__('...')}}</x-starterkid::starterkid.please-wait></x-starterkid::starterkid.button-danger>
     @endif
     @if($selected)
     <x-starterkid::starterkid.button-danger wire:click="resetSelected">{{__('Reset')}}<x-starterkid::starterkid.please-wait wire:loading wire:target="resetSelected">{{__('...')}}</x-starterkid::starterkid.please-wait></x-starterkid::starterkid.button-danger>
+    @endif
     @endif
     </div>
     </div>

@@ -5,6 +5,9 @@
       {{__('Dashboard')}}
 </x-starterkid::starterkid.nav-link>
 
+@include('extra-links')
+
+
 @foreach($navLinks as $link)
   @if(Route::has($link['route']))
 @can($link['permission'], $link['model'])

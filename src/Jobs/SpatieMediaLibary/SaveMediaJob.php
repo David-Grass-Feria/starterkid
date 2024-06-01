@@ -8,7 +8,9 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 
-class SaveMediaJob implements ShouldQueue
+// Wichtig: Ich habe hier implements ShouldQueue entfernt.
+
+class SaveMediaJob
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 

@@ -8,9 +8,13 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 
-class DeleteMediaCollection implements ShouldQueue
+//Wichtig: queue läuft hier mit sync
+//implements ShouldQueue
+//use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
+class DeleteMediaCollection
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    
 
     public $record;
     public $collection;

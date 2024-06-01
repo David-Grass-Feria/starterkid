@@ -9,9 +9,13 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 
-class SaveMediaWithFilenameJob implements ShouldQueue
+//Wichtig: queue läuft hier mit sync
+//implements ShouldQueue
+//use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
+class SaveMediaWithFilenameJob
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
 
     public $tmpFilenames;
     public $record;

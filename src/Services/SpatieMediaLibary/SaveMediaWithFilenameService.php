@@ -15,6 +15,6 @@ class SaveMediaWithFilenameService
             }
         
 
-        \GrassFeria\Starterkid\Jobs\SpatieMediaLibary\SaveMediaWithFilenameJob::dispatch($tmpFilenames,$record,$collection,$disk,$filename);
+        \GrassFeria\Starterkid\Jobs\SpatieMediaLibary\SaveMediaWithFilenameJob::dispatch($tmpFilenames,$record,$collection,$disk,$filename)->onConnection('sync');
     }
 }

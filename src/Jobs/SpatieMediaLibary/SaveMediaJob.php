@@ -44,13 +44,6 @@ class SaveMediaJob implements ShouldQueue
             
         }
 
-        // check if frontend cache is active
-        if (!config()->has('starterkid-frontend.frontend_cache') || config('starterkid-frontend.frontend_cache') == true) {
-               
-            $url = route('front.shelter.show', ['slug' => $this->record->slug]);
-            $cacheKey = \GrassFeria\StarterkidFrontend\Services\GetCacheKey::ForUrl($url);
-            \Illuminate\Support\Facades\Cache::forget($cacheKey);
-            \GrassFeria\StarterkidFrontend\Jobs\PreloadCacheJob::dispatch($url);
-           }
+        
     }
 }

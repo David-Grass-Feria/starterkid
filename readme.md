@@ -46,7 +46,7 @@ php artisan horizon:install
 
 # install spatie medialibary
 ```shell
-composer require "spatie/laravel-medialibrary:^11.0.0"
+composer require "spatie/laravel-medialibrary" --ignore-platform-reqs
 ```
 ```shell
 php artisan vendor:publish --provider="Spatie\MediaLibrary\MediaLibraryServiceProvider" --tag="medialibrary-migrations"

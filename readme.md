@@ -54,12 +54,12 @@ php artisan vendor:publish --provider="Spatie\MediaLibrary\MediaLibraryServicePr
 
 # install spatie backup
 ```shell
-composer require spatie/laravel-backup
+composer require spatie/laravel-backup --ignore-platform-reqs
 ```
 
 # install debugbar
 ```shell
-composer require barryvdh/laravel-debugbar --dev
+composer require barryvdh/laravel-debugbar --dev --ignore-platform-reqs
 ```
 
 ```shell
@@ -69,7 +69,7 @@ php artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider"
 
 # sftp filesystem
 ```shell
-composer require league/flysystem-sftp-v3
+composer require league/flysystem-sftp-v3 --ignore-platform-reqs
 ```
 
 # add this line in /composer.json

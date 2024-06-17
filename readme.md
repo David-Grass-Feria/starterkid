@@ -31,6 +31,22 @@ MAIL_FROM_NAME="${APP_NAME}"
 MAX_FILE_SIZE_KB=300000 #300MB
 MAX_FILE_SIZE_MB=300 #300MB
 ```
+# Problem because of windows add this to composer.json
+```
+"config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true
+        },
+        "platform": {
+            "ext-pcntl": "8.0",
+            "ext-posix": "8.0"
+          }
+    },
+```
 # install predis
 ```shell
 composer require predis/predis

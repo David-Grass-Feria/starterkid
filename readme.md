@@ -38,7 +38,7 @@ composer require predis/predis
 
 # install horizon
 ```shell
-composer require laravel/horizon
+composer require laravel/horizon --ignore-platform-reqs
 ```
 ```shell
 php artisan horizon:install 

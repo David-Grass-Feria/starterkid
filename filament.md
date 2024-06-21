@@ -108,6 +108,12 @@ class CustomMedia extends BaseMedia
 ```
 
 #### Wenn jeder Benutzer eine eigene Storagebox hat
+#### Erstelle eine Migration um die Felder im User Model hinzufügen
+```
+ $table->string('storagebox_host')->nullable();
+            $table->string('storagebox_username')->nullable();
+            $table->text('storagebox_password')->nullable();
+```
 #### Add this in app service provider
 ```
 Storage::extend('storagebox', function ($app, $config) {

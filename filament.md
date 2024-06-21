@@ -85,6 +85,9 @@ composer require league/flysystem-sftp-v3
             'throw' => false,
         ],
 ```
+
+#### Wenn jeder Benutzer seine eigene Storagebox hat
+
 #### Create new Model CustomMedia.php
 ```
 <?php
@@ -102,12 +105,41 @@ class CustomMedia extends BaseMedia
 }
 ```
 
+#### edit web.php (This is also a policy, check if the user is owner of file)
+```shell
+Route::middleware(['auth'])->group(function () {
+    Route::get('/storagebox/{mediaId}/{path}', function ($mediaId, $path) {
+        $filesystem = Storage::disk('storagebox');
+
+        $media = Media::find($mediaId);
+
+        if ($media && $media->model && $media->model->user_id === auth()->user()->id) {
+            if ($filesystem->exists("$mediaId/$path")) {
+                $fileContent = $filesystem->get("$mediaId/$path");
+
+                $finfo = new finfo(FILEINFO_MIME_TYPE);
+                $mimeType = $finfo->buffer($fileContent);
+
+                return response($fileContent, 200)
+                    ->header('Content-Type', $mimeType)
+                    ->header('Content-Length', strlen($fileContent))
+                    ->header('Content-Disposition', 'inline; filename="' . basename($path) . '"')
+                    ->header('Accept-Ranges', 'bytes');
+            }
+            abort(404);
+        }
+        abort(403);
+    })->where('path', '.*');
+});
+```
+
+
 #### Edit Spatie Config File for SFTP
 ```shell
 'media_model' => App\Models\CustomMedia::class,
 ```
 
-#### Wenn jeder Benutzer eine eigene Storagebox hat
+
 #### Erstelle eine Migration um die Felder im User Model hinzufügen
 ```
  $table->string('storagebox_host')->nullable();

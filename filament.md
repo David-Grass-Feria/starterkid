@@ -107,5 +107,32 @@ class CustomMedia extends BaseMedia
 'media_model' => App\Models\CustomMedia::class,
 ```
 
+#### Wenn jeder Benutzer eine eigene Storagebox hat
+#### Add this in app service provider
+```
+Storage::extend('storagebox', function ($app, $config) {
+            $user = auth()->user(); // Beispiel für authentifizierten Benutzer
 
+            // Hole die Zugangsdaten aus der Benutzerdatenbank
+            $userStorageConfig = [
+                'driver' => 'sftp',
+                'root' => '/',
+                'host' => $user->storagebox_host,
+                'username' => $user->storagebox_username,
+                'password' => $user->storagebox_password,
+                'directory_visibility' => 'public',
+                'visibility' => 'public',
+                'throw' => false,
+            ];
 
+            return Storage::createSftpDriver($userStorageConfig);
+        });
+```
+#### In config filesytems.php
+```
+'storagebox' => [
+            'driver' => 'storagebox',
+
+        ],
+
+```
